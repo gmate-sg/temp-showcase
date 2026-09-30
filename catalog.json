@@ -1,0 +1,3871 @@
+[
+  {
+    "id": "css-grid",
+    "name": "网格布局",
+    "en": "CSS Grid",
+    "category": "css",
+    "kind": "technology",
+    "description": "用行、列和命名区域组织二维页面；适合整页结构与整齐的内容卡片。",
+    "useCases": [
+      "卡片阵列",
+      "仪表盘",
+      "编辑式排版"
+    ],
+    "tags": [
+      "Grid",
+      "网格",
+      "二维布局"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+    "demo": "grid",
+    "related": [
+      "css-subgrid",
+      "container-queries"
+    ]
+  },
+  {
+    "id": "flexbox",
+    "name": "弹性布局",
+    "en": "Flexbox",
+    "category": "css",
+    "kind": "technology",
+    "description": "沿一个主轴分配空间与对齐元素，让导航、按钮组和工具栏灵活伸缩。",
+    "useCases": [
+      "导航栏",
+      "表单行",
+      "按钮组"
+    ],
+    "tags": [
+      "flex",
+      "弹性盒",
+      "对齐"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout",
+    "demo": "grid",
+    "related": [
+      "css-grid"
+    ]
+  },
+  {
+    "id": "css-subgrid",
+    "name": "子网格对齐",
+    "en": "CSS Subgrid",
+    "category": "css",
+    "kind": "technology",
+    "description": "嵌套元素继承父网格的轨道，使不同卡片里的标题、价格与按钮共用对齐线。",
+    "useCases": [
+      "价格卡片",
+      "产品目录",
+      "复杂表单"
+    ],
+    "tags": [
+      "subgrid",
+      "轨道",
+      "跨卡片对齐"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Subgrid",
+    "demo": "grid",
+    "related": [
+      "css-grid"
+    ]
+  },
+  {
+    "id": "container-queries",
+    "name": "容器查询",
+    "en": "Container Queries",
+    "category": "css",
+    "kind": "technology",
+    "description": "组件根据自身容器的尺寸切换布局，而不只根据整个窗口宽度变化。",
+    "useCases": [
+      "可复用卡片",
+      "侧栏组件",
+      "嵌入式模块"
+    ],
+    "tags": [
+      "@container",
+      "组件响应式",
+      "cqw"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries",
+    "demo": "grid",
+    "related": [
+      "responsive-design"
+    ]
+  },
+  {
+    "id": "responsive-design",
+    "name": "响应式设计",
+    "en": "Responsive Web Design",
+    "category": "css",
+    "kind": "technology",
+    "description": "组合弹性尺寸、媒体查询和适配图片，让同一内容在手机与大屏上保持可读。",
+    "useCases": [
+      "跨设备展示",
+      "移动网页",
+      "弹性版式"
+    ],
+    "tags": [
+      "RWD",
+      "Media Queries",
+      "媒体查询"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+    "demo": "grid",
+    "related": [
+      "container-queries",
+      "responsive-images"
+    ]
+  },
+  {
+    "id": "fluid-typography",
+    "name": "流式字号",
+    "en": "Fluid Typography",
+    "category": "css",
+    "kind": "technology",
+    "description": "通过 clamp() 在最小与最大字号之间连续缩放，避免标题在断点处突然跳变。",
+    "useCases": [
+      "大标题",
+      "响应式正文",
+      "展示型首页"
+    ],
+    "tags": [
+      "clamp()",
+      "流体排版"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/clamp",
+    "demo": "type",
+    "related": [
+      "variable-fonts"
+    ]
+  },
+  {
+    "id": "variable-fonts",
+    "name": "可变字体",
+    "en": "Variable Fonts",
+    "category": "css",
+    "kind": "technology",
+    "description": "一个字体文件可以提供字重、宽度等变化轴，便于精细调整排版与动画。",
+    "useCases": [
+      "品牌标题",
+      "可读性调节",
+      "字体动效"
+    ],
+    "tags": [
+      "font-variation-settings",
+      "字重",
+      "可变字体"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts/Variable_fonts_guide",
+    "demo": "type",
+    "related": [
+      "fluid-typography"
+    ]
+  },
+  {
+    "id": "css-custom-properties",
+    "name": "CSS 自定义属性",
+    "en": "CSS Custom Properties",
+    "category": "css",
+    "kind": "technology",
+    "description": "把颜色、间距和尺寸存为可继承的变量，使主题切换和统一维护更直接。",
+    "useCases": [
+      "主题系统",
+      "设计令牌",
+      "组件参数"
+    ],
+    "tags": [
+      "CSS Variables",
+      "var()",
+      "设计变量"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties",
+    "demo": "code",
+    "related": [
+      "design-tokens",
+      "cascade-layers"
+    ]
+  },
+  {
+    "id": "cascade-layers",
+    "name": "层叠层",
+    "en": "CSS Cascade Layers",
+    "category": "css",
+    "kind": "technology",
+    "description": "用 @layer 明确基础、组件和覆盖样式的优先级，减少选择器权重争夺。",
+    "useCases": [
+      "大型样式表",
+      "第三方样式整合",
+      "组件库"
+    ],
+    "tags": [
+      "@layer",
+      "层叠"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer",
+    "demo": "code",
+    "related": [
+      "css-custom-properties"
+    ]
+  },
+  {
+    "id": "css-nesting",
+    "name": "原生 CSS 嵌套",
+    "en": "CSS Nesting",
+    "category": "css",
+    "kind": "technology",
+    "description": "在浏览器中直接表达选择器的嵌套关系，让组件样式更容易跟随结构阅读。",
+    "useCases": [
+      "组件样式",
+      "状态选择器",
+      "样式维护"
+    ],
+    "tags": [
+      "&",
+      "嵌套"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting",
+    "demo": "code",
+    "related": [
+      "cascade-layers"
+    ]
+  },
+  {
+    "id": "css-has",
+    "name": "关系选择器",
+    "en": "CSS :has()",
+    "category": "css",
+    "kind": "technology",
+    "description": "根据后代或相邻元素是否匹配来选择父级，使部分界面状态可用 CSS 表达。",
+    "useCases": [
+      "表单状态",
+      "卡片悬停",
+      "条件排版"
+    ],
+    "tags": [
+      ":has()",
+      "父选择器"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/:has",
+    "demo": "code",
+    "related": [
+      "css-nesting"
+    ]
+  },
+  {
+    "id": "oklch-color",
+    "name": "感知色彩空间",
+    "en": "OKLCH Color",
+    "category": "css",
+    "kind": "technology",
+    "description": "用亮度、彩度与色相描述颜色，便于设计视觉层次较一致的色阶。",
+    "useCases": [
+      "品牌色阶",
+      "深浅主题",
+      "渐变调色"
+    ],
+    "tags": [
+      "oklch()",
+      "感知亮度"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch",
+    "demo": "gradient",
+    "related": [
+      "css-color-mix"
+    ]
+  },
+  {
+    "id": "css-color-mix",
+    "name": "颜色混合函数",
+    "en": "CSS color-mix()",
+    "category": "css",
+    "kind": "technology",
+    "description": "在指定色彩空间中混合颜色，可从主色生成背景、边框和悬停色。",
+    "useCases": [
+      "主题派生色",
+      "透明色阶",
+      "柔和渐变"
+    ],
+    "tags": [
+      "color-mix()",
+      "色彩空间"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix",
+    "demo": "gradient",
+    "related": [
+      "oklch-color"
+    ]
+  },
+  {
+    "id": "css-gradients",
+    "name": "CSS 渐变",
+    "en": "CSS Gradients",
+    "category": "css",
+    "kind": "technology",
+    "description": "用线性、径向或锥形渐变生成可缩放背景，无须为简单色彩效果下载位图。",
+    "useCases": [
+      "背景层次",
+      "光晕",
+      "色彩可视化"
+    ],
+    "tags": [
+      "linear-gradient",
+      "radial-gradient",
+      "conic-gradient"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_images/Using_CSS_gradients",
+    "demo": "gradient",
+    "related": [
+      "oklch-color"
+    ]
+  },
+  {
+    "id": "backdrop-filter",
+    "name": "背景模糊滤镜",
+    "en": "Backdrop Filter",
+    "category": "css",
+    "kind": "technology",
+    "description": "对元素背后的内容进行模糊或调色，常用于半透明浮层；需控制覆盖面积和对比度。",
+    "useCases": [
+      "玻璃面板",
+      "悬浮导航",
+      "弹窗背景"
+    ],
+    "tags": [
+      "backdrop-filter",
+      "blur",
+      "玻璃态"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter",
+    "demo": "glass",
+    "related": [
+      "css-masks"
+    ]
+  },
+  {
+    "id": "css-masks",
+    "name": "遮罩与裁剪",
+    "en": "CSS Masks & Clip Paths",
+    "category": "css",
+    "kind": "technology",
+    "description": "用遮罩透明度或几何轮廓限定元素可见区域，形成文字穿透、异形卡片与图片揭示。",
+    "useCases": [
+      "图片揭示",
+      "异形布局",
+      "渐隐边缘"
+    ],
+    "tags": [
+      "clip-path",
+      "mask-image",
+      "遮罩"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_masking",
+    "demo": "gradient",
+    "related": [
+      "svg"
+    ]
+  },
+  {
+    "id": "css-3d-transforms",
+    "name": "CSS 三维变换",
+    "en": "CSS 3D Transforms",
+    "category": "css",
+    "kind": "technology",
+    "description": "用透视和三维旋转呈现具有空间感的 DOM 元素，适合轻量翻转卡片。",
+    "useCases": [
+      "翻转卡片",
+      "空间排版",
+      "视差装饰"
+    ],
+    "tags": [
+      "perspective",
+      "rotate3d",
+      "CSS 3D"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function",
+    "demo": "3d",
+    "related": [
+      "three-js"
+    ]
+  },
+  {
+    "id": "css-scroll-snap",
+    "name": "滚动吸附",
+    "en": "CSS Scroll Snap",
+    "category": "css",
+    "kind": "technology",
+    "description": "让滚动容器在指定位置自然停靠，可构建轮播和分屏展示并保留原生滚动体验。",
+    "useCases": [
+      "横向画廊",
+      "分屏展示",
+      "移动轮播"
+    ],
+    "tags": [
+      "scroll-snap-type",
+      "吸附"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap",
+    "demo": "scroll",
+    "related": [
+      "scroll-driven-animations"
+    ]
+  },
+  {
+    "id": "logical-properties",
+    "name": "逻辑属性",
+    "en": "CSS Logical Properties",
+    "category": "css",
+    "kind": "technology",
+    "description": "用 inline 和 block 方向表达间距与尺寸，帮助界面适应不同书写方向。",
+    "useCases": [
+      "多语言界面",
+      "组件库",
+      "国际化排版"
+    ],
+    "tags": [
+      "inline",
+      "block",
+      "多语言"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values",
+    "demo": "grid",
+    "related": [
+      "responsive-design"
+    ]
+  },
+  {
+    "id": "css-anchor-positioning",
+    "name": "锚点定位",
+    "en": "CSS Anchor Positioning",
+    "category": "css",
+    "kind": "technology",
+    "description": "让浮层以另一个元素为锚点定位，并处理部分空间不足的情况；需按目标浏览器提供回退。",
+    "useCases": [
+      "提示气泡",
+      "下拉菜单",
+      "上下文工具条"
+    ],
+    "tags": [
+      "anchor-name",
+      "position-anchor"
+    ],
+    "level": "进阶",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning",
+    "demo": "platform",
+    "related": [
+      "popover-api"
+    ]
+  },
+  {
+    "id": "css-transitions",
+    "name": "状态过渡",
+    "en": "CSS Transitions",
+    "category": "motion",
+    "kind": "technology",
+    "description": "在两个样式状态之间插值，让悬停、展开与选中反馈更连贯。",
+    "useCases": [
+      "按钮反馈",
+      "菜单展开",
+      "主题切换"
+    ],
+    "tags": [
+      "transition",
+      "easing",
+      "缓动"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions",
+    "demo": "motion",
+    "related": [
+      "css-keyframes"
+    ]
+  },
+  {
+    "id": "css-keyframes",
+    "name": "关键帧动画",
+    "en": "CSS Keyframe Animations",
+    "category": "motion",
+    "kind": "technology",
+    "description": "通过 @keyframes 定义多个动画阶段，适合独立播放的装饰与状态反馈。",
+    "useCases": [
+      "加载指示",
+      "循环装饰",
+      "入场动画"
+    ],
+    "tags": [
+      "@keyframes",
+      "animation",
+      "关键帧"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations",
+    "demo": "motion",
+    "related": [
+      "reduced-motion"
+    ]
+  },
+  {
+    "id": "web-animations-api",
+    "name": "浏览器动画接口",
+    "en": "Web Animations API",
+    "category": "motion",
+    "kind": "technology",
+    "description": "通过 JavaScript 控制动画的播放、暂停、时间与关键帧，适合需要交互控制的动效。",
+    "useCases": [
+      "暂停与回放",
+      "交互反馈",
+      "时间轴控制"
+    ],
+    "tags": [
+      "WAAPI",
+      "Element.animate",
+      "动画接口"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API",
+    "demo": "motion",
+    "related": [
+      "css-keyframes"
+    ]
+  },
+  {
+    "id": "request-animation-frame",
+    "name": "逐帧动画调度",
+    "en": "requestAnimationFrame",
+    "category": "motion",
+    "kind": "technology",
+    "description": "把视觉更新安排在浏览器下一次绘制前，并根据时间差计算运动，避免动画依赖帧数。",
+    "useCases": [
+      "画布动画",
+      "游戏循环",
+      "平滑插值"
+    ],
+    "tags": [
+      "rAF",
+      "绘制循环"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
+    "demo": "motion",
+    "related": [
+      "canvas-2d",
+      "three-js"
+    ]
+  },
+  {
+    "id": "gsap",
+    "name": "GSAP 动画引擎",
+    "en": "GSAP",
+    "category": "motion",
+    "kind": "technology",
+    "description": "用 JavaScript 时间轴组织连续、交错与复杂动画，可同时控制 DOM 与对象属性。",
+    "useCases": [
+      "多段时间轴",
+      "文字动效",
+      "品牌展示"
+    ],
+    "tags": [
+      "GSAP",
+      "Timeline",
+      "Tween"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://gsap.com/docs/v3/",
+    "demo": "motion",
+    "related": [
+      "scrolltrigger"
+    ]
+  },
+  {
+    "id": "scrolltrigger",
+    "name": "滚动触发动效",
+    "en": "GSAP ScrollTrigger",
+    "category": "motion",
+    "kind": "technology",
+    "description": "将 GSAP 动画与滚动位置关联，并支持固定、进度同步与进入离开触发。",
+    "useCases": [
+      "滚动叙事",
+      "产品演示",
+      "分段场景"
+    ],
+    "tags": [
+      "ScrollTrigger",
+      "scrub",
+      "pin"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+    "demo": "scroll",
+    "related": [
+      "gsap",
+      "scroll-driven-animations"
+    ]
+  },
+  {
+    "id": "motion-library",
+    "name": "Motion 动画库",
+    "en": "Motion",
+    "category": "motion",
+    "kind": "technology",
+    "description": "提供 JavaScript 与 React 的动画工具，可组合布局过渡、手势反馈和弹簧运动。",
+    "useCases": [
+      "组件动效",
+      "拖拽反馈",
+      "布局重排"
+    ],
+    "tags": [
+      "Framer Motion",
+      "motion",
+      "动画库"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://motion.dev/docs",
+    "demo": "motion",
+    "related": [
+      "react",
+      "spring-animation"
+    ]
+  },
+  {
+    "id": "spring-animation",
+    "name": "弹簧动画",
+    "en": "Spring Animation",
+    "category": "motion",
+    "kind": "technology",
+    "description": "以弹簧的回弹和阻尼模拟运动，使界面随目标变化保持自然连续。",
+    "useCases": [
+      "拖拽释放",
+      "卡片展开",
+      "手势响应"
+    ],
+    "tags": [
+      "spring",
+      "damping",
+      "stiffness"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://motion.dev/docs/animate",
+    "demo": "motion",
+    "related": [
+      "motion-library"
+    ]
+  },
+  {
+    "id": "scroll-driven-animations",
+    "name": "原生滚动驱动动画",
+    "en": "CSS Scroll-driven Animations",
+    "category": "motion",
+    "kind": "technology",
+    "description": "用滚动或元素可见进度作为 CSS 动画时间轴；不支持的环境应保留正常内容。",
+    "useCases": [
+      "阅读进度",
+      "滚动揭示",
+      "视差效果"
+    ],
+    "tags": [
+      "animation-timeline",
+      "scroll()",
+      "view()"
+    ],
+    "level": "进阶",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations",
+    "demo": "scroll",
+    "related": [
+      "css-scroll-snap",
+      "scrolltrigger"
+    ]
+  },
+  {
+    "id": "intersection-observer",
+    "name": "可见性观察器",
+    "en": "Intersection Observer",
+    "category": "motion",
+    "kind": "technology",
+    "description": "异步观察元素与视口的交集，适合触发入场动画、按需加载与曝光记录。",
+    "useCases": [
+      "进入视口动画",
+      "无限加载",
+      "曝光统计"
+    ],
+    "tags": [
+      "IntersectionObserver",
+      "入场"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+    "demo": "scroll",
+    "related": [
+      "lazy-loading"
+    ]
+  },
+  {
+    "id": "lottie",
+    "name": "矢量动画播放",
+    "en": "Lottie",
+    "category": "motion",
+    "kind": "technology",
+    "description": "通过播放器展示 JSON 描述的动画，适合可缩放图标；导出特性需与播放器支持范围匹配。",
+    "useCases": [
+      "品牌图标",
+      "引导动画",
+      "状态插画"
+    ],
+    "tags": [
+      "lottie-web",
+      "Bodymovin",
+      "JSON动画"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://github.com/airbnb/lottie-web",
+    "demo": "motion",
+    "related": [
+      "svg"
+    ]
+  },
+  {
+    "id": "three-js",
+    "name": "Three.js 三维引擎",
+    "en": "Three.js",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "封装场景、相机、几何体和材质的 JavaScript 三维库，便于制作可交互的产品和空间展示。",
+    "useCases": [
+      "产品交互展示",
+      "三维首页",
+      "数据空间"
+    ],
+    "tags": [
+      "Three.js",
+      "threejs",
+      "three",
+      "3D",
+      "三维"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/manual/",
+    "demo": "3d",
+    "related": [
+      "webgl",
+      "orbit-controls",
+      "pbr-materials"
+    ]
+  },
+  {
+    "id": "webgl",
+    "name": "浏览器 GPU 图形接口",
+    "en": "WebGL / WebGL 2",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "通过 canvas 使用 GPU 绘制二维与三维图形；WebGL 2 提供更丰富的图形能力，可用性受设备和图形环境影响。",
+    "useCases": [
+      "实时三维",
+      "着色器背景",
+      "可视化"
+    ],
+    "tags": [
+      "WebGL2",
+      "OpenGL ES",
+      "GPU"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
+    "demo": "3d",
+    "related": [
+      "three-js",
+      "glsl-shaders"
+    ]
+  },
+  {
+    "id": "webgpu",
+    "name": "新一代 GPU 接口",
+    "en": "WebGPU",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "提供现代 GPU 绘图与通用计算接口，需要安全上下文和支持的浏览器、驱动及设备。",
+    "useCases": [
+      "GPU 计算",
+      "大型可视化",
+      "新渲染管线"
+    ],
+    "tags": [
+      "WebGPU",
+      "GPUDevice",
+      "Compute"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API",
+    "demo": "3d",
+    "related": [
+      "wgsl",
+      "three-webgpu-renderer"
+    ]
+  },
+  {
+    "id": "glsl-shaders",
+    "name": "GLSL 着色器",
+    "en": "GLSL Shaders",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "编写顶点与片元着色程序，直接定义形变、颜色、光照和程序化纹理。",
+    "useCases": [
+      "流体视觉",
+      "表面形变",
+      "自定义光效"
+    ],
+    "tags": [
+      "GLSL",
+      "ShaderMaterial",
+      "片元着色器"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/ShaderMaterial.html",
+    "demo": "gradient",
+    "related": [
+      "webgl",
+      "tsl"
+    ]
+  },
+  {
+    "id": "wgsl",
+    "name": "WebGPU 着色语言",
+    "en": "WGSL",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "WebGPU 的着色语言，可描述顶点、片元与计算着色程序，需搭配对应管线与资源布局。",
+    "useCases": [
+      "计算着色器",
+      "GPU 粒子",
+      "定制渲染"
+    ],
+    "tags": [
+      "WGSL",
+      "Compute Shader"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://www.w3.org/TR/WGSL/",
+    "demo": "code",
+    "related": [
+      "webgpu",
+      "glsl-shaders"
+    ]
+  },
+  {
+    "id": "tsl",
+    "name": "Three.js 着色语言",
+    "en": "Three.js Shading Language / TSL",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "以 JavaScript 节点表达式构建着色逻辑，让材质更容易组合并适配 Three.js 的不同渲染后端。",
+    "useCases": [
+      "节点材质",
+      "程序化表面",
+      "可组合着色"
+    ],
+    "tags": [
+      "TSL",
+      "Node Material",
+      "节点材质"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/TSL.html",
+    "demo": "code",
+    "related": [
+      "three-webgpu-renderer",
+      "glsl-shaders"
+    ]
+  },
+  {
+    "id": "three-webgpu-renderer",
+    "name": "Three.js 新渲染器",
+    "en": "Three.js WebGPURenderer",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "使用 WebGPU 后端并可回退到 WebGL 2，配合节点材质与 TSL；官方仍标注实验状态，迁移需检查特性差异。",
+    "useCases": [
+      "探索新渲染管线",
+      "节点后处理",
+      "GPU 计算"
+    ],
+    "tags": [
+      "WebGPURenderer",
+      "WebGL fallback",
+      "TSL"
+    ],
+    "level": "实验",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/manual/pages/webgpurenderer",
+    "demo": "3d",
+    "related": [
+      "webgpu",
+      "tsl"
+    ]
+  },
+  {
+    "id": "pbr-materials",
+    "name": "物理渲染材质",
+    "en": "Physically Based Rendering / PBR",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "用金属度、粗糙度等参数描述表面与光的关系，便于塑造可信的金属、塑料与玻璃。",
+    "useCases": [
+      "产品材质",
+      "建筑展示",
+      "真实光照"
+    ],
+    "tags": [
+      "PBR",
+      "metalness",
+      "roughness"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/MeshStandardMaterial.html",
+    "demo": "3d",
+    "related": [
+      "three-js",
+      "image-based-lighting"
+    ]
+  },
+  {
+    "id": "gltf",
+    "name": "三维模型交换",
+    "en": "glTF / GLB",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "用于实时三维资产传输的开放格式，可承载几何、材质与动画；加载器支持范围取决于扩展。",
+    "useCases": [
+      "模型导入",
+      "产品目录",
+      "跨软件资产"
+    ],
+    "tags": [
+      "glTF",
+      "GLB",
+      "GLTFLoader"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://www.khronos.org/gltf/",
+    "demo": "3d",
+    "related": [
+      "three-js",
+      "draco-compression"
+    ]
+  },
+  {
+    "id": "instanced-rendering",
+    "name": "实例化渲染",
+    "en": "Instanced Rendering",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "多个物体复用同一几何体与材质，并分别设置变换，可减少大量重复模型的绘制调用。",
+    "useCases": [
+      "建筑群",
+      "点阵结构",
+      "重复产品"
+    ],
+    "tags": [
+      "InstancedMesh",
+      "Instancing",
+      "Draw Calls"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/InstancedMesh.html",
+    "demo": "3d",
+    "related": [
+      "buffer-geometry",
+      "three-js"
+    ]
+  },
+  {
+    "id": "particle-system",
+    "name": "粒子系统",
+    "en": "Particle Systems",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "用大量点或小图元表达星尘、流动和群集；数量、透明混合与更新方式共同影响性能。",
+    "useCases": [
+      "星尘场景",
+      "流动数据",
+      "氛围效果"
+    ],
+    "tags": [
+      "Points",
+      "Particles",
+      "点云"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/Points.html",
+    "demo": "particle",
+    "related": [
+      "instanced-rendering",
+      "glsl-shaders"
+    ]
+  },
+  {
+    "id": "post-processing",
+    "name": "屏幕后处理",
+    "en": "Post-processing",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "将渲染结果继续处理，可形成辉光、景深与色彩分级；不同渲染器使用的后处理体系可能不同。",
+    "useCases": [
+      "电影感画面",
+      "柔和辉光",
+      "景深展示"
+    ],
+    "tags": [
+      "EffectComposer",
+      "Bloom",
+      "DoF"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/manual/pages/post-processing.html",
+    "demo": "3d",
+    "related": [
+      "render-targets",
+      "three-webgpu-renderer"
+    ]
+  },
+  {
+    "id": "orbit-controls",
+    "name": "轨道相机控制",
+    "en": "OrbitControls",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "让用户围绕目标旋转、缩放和平移相机，适合任意角度查看模型。",
+    "useCases": [
+      "模型查看器",
+      "产品展示",
+      "场景探索"
+    ],
+    "tags": [
+      "OrbitControls",
+      "旋转",
+      "缩放"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/OrbitControls.html",
+    "demo": "3d",
+    "related": [
+      "three-js",
+      "perspective-camera"
+    ]
+  },
+  {
+    "id": "raycasting",
+    "name": "射线拾取",
+    "en": "Raycasting",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "把屏幕指针转换为场景射线，检测物体相交并实现三维点击、悬停和选择。",
+    "useCases": [
+      "部件选择",
+      "模型热点",
+      "三维交互"
+    ],
+    "tags": [
+      "Raycaster",
+      "Picking",
+      "拾取"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/Raycaster.html",
+    "demo": "3d",
+    "related": [
+      "orbit-controls"
+    ]
+  },
+  {
+    "id": "render-targets",
+    "name": "离屏渲染目标",
+    "en": "Render Targets",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "将场景绘制到纹理而非直接显示，为镜面、后处理与多通道效果提供输入。",
+    "useCases": [
+      "反射表面",
+      "后处理链",
+      "画中画"
+    ],
+    "tags": [
+      "RenderTarget",
+      "Framebuffer",
+      "FBO"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/WebGLRenderTarget.html",
+    "demo": "3d",
+    "related": [
+      "post-processing"
+    ]
+  },
+  {
+    "id": "buffer-geometry",
+    "name": "缓冲几何体",
+    "en": "BufferGeometry",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "使用属性缓冲区描述顶点、法线与纹理坐标，可创建自定义形状并高效传输到 GPU。",
+    "useCases": [
+      "程序化建模",
+      "数据几何",
+      "顶点动画"
+    ],
+    "tags": [
+      "BufferGeometry",
+      "Vertex",
+      "UV"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/BufferGeometry.html",
+    "demo": "3d",
+    "related": [
+      "instanced-rendering",
+      "glsl-shaders"
+    ]
+  },
+  {
+    "id": "react-three-fiber",
+    "name": "React 三维渲染器",
+    "en": "React Three Fiber",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "通过 React 组件声明 Three.js 场景，使三维对象能融入 React 的状态与组件组织。",
+    "useCases": [
+      "React 三维页面",
+      "组件化场景",
+      "交互配置器"
+    ],
+    "tags": [
+      "R3F",
+      "React Three Fiber",
+      "Three.js"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://r3f.docs.pmnd.rs/getting-started/introduction",
+    "demo": "3d",
+    "related": [
+      "react",
+      "three-js",
+      "drei"
+    ]
+  },
+  {
+    "id": "drei",
+    "name": "三维交互组件集",
+    "en": "Drei",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "为 React Three Fiber 提供控制器、模型加载与场景辅助组件，减少常见三维功能的重复代码。",
+    "useCases": [
+      "相机控制",
+      "环境设置",
+      "模型加载"
+    ],
+    "tags": [
+      "Drei",
+      "R3F",
+      "辅助组件"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://drei.docs.pmnd.rs/",
+    "demo": "3d",
+    "related": [
+      "react-three-fiber"
+    ]
+  },
+  {
+    "id": "image-based-lighting",
+    "name": "环境贴图照明",
+    "en": "Image-based Lighting / IBL",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "利用环境纹理提供反射与照明信息，使 PBR 物体更容易融入一致的光照环境。",
+    "useCases": [
+      "金属反射",
+      "摄影棚效果",
+      "产品材质"
+    ],
+    "tags": [
+      "IBL",
+      "HDR",
+      "Environment Map"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/PMREMGenerator.html",
+    "demo": "3d",
+    "related": [
+      "pbr-materials"
+    ]
+  },
+  {
+    "id": "perspective-camera",
+    "name": "透视相机",
+    "en": "Perspective Camera",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "用视野角、宽高比和裁剪面控制空间投影，形成近大远小的三维画面。",
+    "useCases": [
+      "产品镜头",
+      "空间探索",
+      "景深构图"
+    ],
+    "tags": [
+      "FOV",
+      "Camera",
+      "视角"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/PerspectiveCamera.html",
+    "demo": "3d",
+    "related": [
+      "orbit-controls"
+    ]
+  },
+  {
+    "id": "draco-compression",
+    "name": "几何压缩",
+    "en": "Draco Geometry Compression",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "压缩三维几何数据以减少传输体积；加载时需解码，并权衡解码开销和兼容性。",
+    "useCases": [
+      "模型减重",
+      "移动端三维",
+      "资产交付"
+    ],
+    "tags": [
+      "Draco",
+      "DRACOLoader",
+      "几何压缩"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://threejs.org/docs/pages/DRACOLoader.html",
+    "demo": "performance",
+    "related": [
+      "gltf"
+    ]
+  },
+  {
+    "id": "canvas-2d",
+    "name": "二维画布",
+    "en": "Canvas 2D",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "用绘图指令在画布中生成图形，适合逐帧动画、图像处理与自定义绘图。",
+    "useCases": [
+      "动态绘图",
+      "图像处理",
+      "轻量游戏"
+    ],
+    "tags": [
+      "Canvas",
+      "2D Context",
+      "画布"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+    "demo": "particle",
+    "related": [
+      "request-animation-frame",
+      "offscreen-canvas"
+    ]
+  },
+  {
+    "id": "svg",
+    "name": "可缩放矢量图形",
+    "en": "SVG",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "以矢量元素描述图形，保留清晰缩放、DOM 交互与文本，适合图标和中等复杂度可视化。",
+    "useCases": [
+      "图标系统",
+      "交互图表",
+      "路径动画"
+    ],
+    "tags": [
+      "SVG",
+      "Vector",
+      "矢量"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/SVG",
+    "demo": "grid",
+    "related": [
+      "lottie",
+      "d3"
+    ]
+  },
+  {
+    "id": "d3",
+    "name": "数据驱动可视化",
+    "en": "D3.js",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "将数据映射到 DOM 或图形，提供比例尺、形状与布局工具来组织定制可视化。",
+    "useCases": [
+      "定制图表",
+      "数据叙事",
+      "交互地图"
+    ],
+    "tags": [
+      "D3",
+      "Scale",
+      "数据可视化"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://d3js.org/",
+    "demo": "data",
+    "related": [
+      "svg"
+    ]
+  },
+  {
+    "id": "pixi-js",
+    "name": "二维 GPU 渲染库",
+    "en": "PixiJS",
+    "category": "graphics",
+    "kind": "technology",
+    "description": "提供面向精灵、纹理与交互对象的二维渲染体系，适合图形密集的网页应用。",
+    "useCases": [
+      "二维游戏",
+      "交互海报",
+      "大量精灵"
+    ],
+    "tags": [
+      "PixiJS",
+      "Sprite",
+      "二维渲染"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://pixijs.com/8.x/guides/getting-started/intro",
+    "demo": "particle",
+    "related": [
+      "webgl",
+      "canvas-2d"
+    ]
+  },
+  {
+    "id": "react",
+    "name": "React 组件库",
+    "en": "React",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "用组件、状态和声明式更新构建界面，适合组织复杂交互及可复用 UI。",
+    "useCases": [
+      "交互应用",
+      "组件库",
+      "三维界面"
+    ],
+    "tags": [
+      "React",
+      "JSX",
+      "Hooks"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://react.dev/learn",
+    "demo": "code",
+    "related": [
+      "react-three-fiber",
+      "react-server-components"
+    ]
+  },
+  {
+    "id": "vue",
+    "name": "Vue 渐进式框架",
+    "en": "Vue",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "以模板、响应式状态与组件组合界面，可从单个交互模块逐步扩展到完整应用。",
+    "useCases": [
+      "管理界面",
+      "内容网站",
+      "组件开发"
+    ],
+    "tags": [
+      "Vue 3",
+      "SFC",
+      "Composition API"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://vuejs.org/guide/introduction.html",
+    "demo": "code",
+    "related": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "svelte",
+    "name": "Svelte 编译式组件",
+    "en": "Svelte",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "在构建时编译组件代码，使用响应式语法表达状态与界面之间的关系。",
+    "useCases": [
+      "轻量交互",
+      "应用界面",
+      "动画组件"
+    ],
+    "tags": [
+      "Svelte",
+      "Runes",
+      "编译"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://svelte.dev/docs/svelte/overview",
+    "demo": "code",
+    "related": [
+      "vite"
+    ]
+  },
+  {
+    "id": "angular",
+    "name": "Angular 应用框架",
+    "en": "Angular",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "提供组件、依赖注入、路由和表单等集成能力，便于组织结构明确的应用。",
+    "useCases": [
+      "企业系统",
+      "复杂表单",
+      "大型应用"
+    ],
+    "tags": [
+      "Angular",
+      "DI",
+      "依赖注入"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://angular.dev/overview",
+    "demo": "code",
+    "related": [
+      "typescript"
+    ]
+  },
+  {
+    "id": "solid-js",
+    "name": "Solid 细粒度响应式",
+    "en": "SolidJS",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "以细粒度响应式计算更新界面，使用 signals 表达状态与依赖关系。",
+    "useCases": [
+      "响应密集界面",
+      "交互应用",
+      "组件系统"
+    ],
+    "tags": [
+      "Solid",
+      "Signals",
+      "细粒度"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://docs.solidjs.com/",
+    "demo": "code",
+    "related": [
+      "signals"
+    ]
+  },
+  {
+    "id": "next-js",
+    "name": "Next.js React 框架",
+    "en": "Next.js",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "将 React 组件与路由、渲染和服务端能力整合；具体部署功能取决于托管环境。",
+    "useCases": [
+      "内容与应用融合",
+      "服务端渲染",
+      "产品网站"
+    ],
+    "tags": [
+      "Next.js",
+      "App Router",
+      "RSC"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://nextjs.org/docs",
+    "demo": "code",
+    "related": [
+      "react",
+      "server-side-rendering"
+    ]
+  },
+  {
+    "id": "nuxt",
+    "name": "Nuxt Vue 框架",
+    "en": "Nuxt",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "为 Vue 提供文件路由、渲染策略与模块体系，可组织静态和服务端网站。",
+    "useCases": [
+      "内容网站",
+      "Vue 全栈应用",
+      "多语言站点"
+    ],
+    "tags": [
+      "Nuxt",
+      "Vue",
+      "Nitro"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://nuxt.com/docs/getting-started/introduction",
+    "demo": "code",
+    "related": [
+      "vue"
+    ]
+  },
+  {
+    "id": "astro",
+    "name": "Astro 内容网站框架",
+    "en": "Astro",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "以内容页面为中心，并按需激活交互组件，适合减少静态页面的客户端 JavaScript。",
+    "useCases": [
+      "文档站",
+      "作品展示",
+      "内容门户"
+    ],
+    "tags": [
+      "Astro",
+      "Islands",
+      "Partial Hydration"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://docs.astro.build/en/concepts/islands/",
+    "demo": "code",
+    "related": [
+      "islands-architecture"
+    ]
+  },
+  {
+    "id": "web-components",
+    "name": "浏览器原生组件",
+    "en": "Web Components",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "组合自定义元素、Shadow DOM 与模板，在不同前端技术之间封装可复用组件。",
+    "useCases": [
+      "跨框架组件",
+      "嵌入式控件",
+      "设计系统"
+    ],
+    "tags": [
+      "Custom Elements",
+      "Shadow DOM",
+      "原生组件"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components",
+    "demo": "code",
+    "related": [
+      "design-tokens"
+    ]
+  },
+  {
+    "id": "tailwind-css",
+    "name": "原子化样式工具",
+    "en": "Tailwind CSS",
+    "category": "frameworks",
+    "kind": "technology",
+    "description": "使用工具类组合布局和视觉规则，并通过统一主题参数约束界面样式。",
+    "useCases": [
+      "快速 UI 开发",
+      "设计系统",
+      "响应式组件"
+    ],
+    "tags": [
+      "Tailwind",
+      "Utility-first",
+      "原子类"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://tailwindcss.com/docs",
+    "demo": "code",
+    "related": [
+      "css-custom-properties"
+    ]
+  },
+  {
+    "id": "signals",
+    "name": "细粒度信号状态",
+    "en": "Signals",
+    "category": "data",
+    "kind": "technology",
+    "description": "用可追踪的状态值和派生计算维护依赖，具体 API 与更新机制取决于使用的框架或库。",
+    "useCases": [
+      "响应式组件",
+      "派生状态",
+      "高频交互"
+    ],
+    "tags": [
+      "Signal",
+      "Computed",
+      "响应式"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://docs.solidjs.com/concepts/signals",
+    "demo": "data",
+    "related": [
+      "solid-js"
+    ]
+  },
+  {
+    "id": "redux-toolkit",
+    "name": "Redux 状态管理",
+    "en": "Redux Toolkit",
+    "category": "data",
+    "kind": "technology",
+    "description": "以明确的状态更新流程组织共享数据，并提供切片、异步逻辑等常用工具。",
+    "useCases": [
+      "复杂业务状态",
+      "可追踪更新",
+      "大型 React 应用"
+    ],
+    "tags": [
+      "RTK",
+      "Redux",
+      "Store"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://redux-toolkit.js.org/introduction/getting-started",
+    "demo": "data",
+    "related": [
+      "react"
+    ]
+  },
+  {
+    "id": "zustand",
+    "name": "Zustand 轻量状态",
+    "en": "Zustand",
+    "category": "data",
+    "kind": "technology",
+    "description": "通过简洁的 store 管理共享状态，可为交互配置与多组件通信提供统一数据入口。",
+    "useCases": [
+      "界面配置",
+      "三维参数",
+      "共享状态"
+    ],
+    "tags": [
+      "Zustand",
+      "Store",
+      "共享状态"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://zustand.docs.pmnd.rs/learn/getting-started/introduction",
+    "demo": "data",
+    "related": [
+      "react",
+      "react-three-fiber"
+    ]
+  },
+  {
+    "id": "pinia",
+    "name": "Pinia Vue 状态",
+    "en": "Pinia",
+    "category": "data",
+    "kind": "technology",
+    "description": "为 Vue 应用组织共享状态、计算值和操作，适合按业务领域划分数据。",
+    "useCases": [
+      "Vue 应用",
+      "购物流程",
+      "跨组件状态"
+    ],
+    "tags": [
+      "Pinia",
+      "Vue Store"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://pinia.vuejs.org/introduction.html",
+    "demo": "data",
+    "related": [
+      "vue"
+    ]
+  },
+  {
+    "id": "tanstack-query",
+    "name": "异步数据缓存",
+    "en": "TanStack Query",
+    "category": "data",
+    "kind": "technology",
+    "description": "管理服务端数据的请求、缓存、重新验证与失效，减少界面中的手工加载状态逻辑。",
+    "useCases": [
+      "数据列表",
+      "实时刷新",
+      "离线恢复"
+    ],
+    "tags": [
+      "React Query",
+      "Server State",
+      "缓存"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://tanstack.com/query/latest/docs/framework/react/overview",
+    "demo": "data",
+    "related": [
+      "fetch-api"
+    ]
+  },
+  {
+    "id": "xstate",
+    "name": "状态机与状态图",
+    "en": "XState",
+    "category": "data",
+    "kind": "technology",
+    "description": "把界面状态与可允许的转换显式建模，帮助处理多步骤和异步交互流程。",
+    "useCases": [
+      "上传流程",
+      "引导步骤",
+      "复杂交互"
+    ],
+    "tags": [
+      "State Machine",
+      "Statechart",
+      "状态图"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://stately.ai/docs/xstate",
+    "demo": "data",
+    "related": [
+      "web-animations-api"
+    ]
+  },
+  {
+    "id": "indexed-db",
+    "name": "结构化本地数据库",
+    "en": "IndexedDB",
+    "category": "data",
+    "kind": "technology",
+    "description": "在浏览器中异步保存较多结构化数据，适合离线应用；容量与保存时长受环境策略影响。",
+    "useCases": [
+      "离线草稿",
+      "本地素材",
+      "大数据缓存"
+    ],
+    "tags": [
+      "IndexedDB",
+      "IDB",
+      "离线数据库"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API",
+    "demo": "data",
+    "related": [
+      "service-workers"
+    ]
+  },
+  {
+    "id": "local-storage",
+    "name": "轻量本地保存",
+    "en": "Web Storage / localStorage",
+    "category": "data",
+    "kind": "technology",
+    "description": "在同一来源的浏览器里保存少量字符串数据，可记住主题与收藏；不同电脑之间不会自动同步。",
+    "useCases": [
+      "主题偏好",
+      "本机收藏",
+      "小型设置"
+    ],
+    "tags": [
+      "localStorage",
+      "sessionStorage",
+      "收藏"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API",
+    "demo": "data",
+    "related": [
+      "indexed-db"
+    ]
+  },
+  {
+    "id": "graphql",
+    "name": "声明式数据查询",
+    "en": "GraphQL",
+    "category": "data",
+    "kind": "technology",
+    "description": "用 schema 描述数据能力，让客户端选择所需字段；需要对应的服务端实现与权限设计。",
+    "useCases": [
+      "复杂数据界面",
+      "多端数据",
+      "关系数据"
+    ],
+    "tags": [
+      "GraphQL",
+      "Schema",
+      "Query"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://graphql.org/learn/",
+    "demo": "data",
+    "related": [
+      "fetch-api"
+    ]
+  },
+  {
+    "id": "zod",
+    "name": "数据模式校验",
+    "en": "Zod",
+    "category": "data",
+    "kind": "technology",
+    "description": "在运行时验证输入数据的结构，并与 TypeScript 类型推断配合处理外部数据。",
+    "useCases": [
+      "表单验证",
+      "接口校验",
+      "配置读取"
+    ],
+    "tags": [
+      "Zod",
+      "Validation",
+      "Schema"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://zod.dev/",
+    "demo": "data",
+    "related": [
+      "typescript"
+    ]
+  },
+  {
+    "id": "fetch-api",
+    "name": "网络请求接口",
+    "en": "Fetch API",
+    "category": "platform",
+    "kind": "technology",
+    "description": "通过 Promise 发起 HTTP 请求，处理响应与流式数据；跨域访问仍受服务器和浏览器规则限制。",
+    "useCases": [
+      "接口请求",
+      "资源加载",
+      "异步表单"
+    ],
+    "tags": [
+      "fetch",
+      "HTTP",
+      "Promise"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+    "demo": "platform",
+    "related": [
+      "abort-controller"
+    ]
+  },
+  {
+    "id": "abort-controller",
+    "name": "可取消异步操作",
+    "en": "AbortController",
+    "category": "platform",
+    "kind": "technology",
+    "description": "通过 AbortSignal 通知支持的请求或操作取消，防止过时任务继续影响界面。",
+    "useCases": [
+      "取消搜索",
+      "中止加载",
+      "切换页面"
+    ],
+    "tags": [
+      "AbortSignal",
+      "Cancel",
+      "取消"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+    "demo": "platform",
+    "related": [
+      "fetch-api"
+    ]
+  },
+  {
+    "id": "web-workers",
+    "name": "后台工作线程",
+    "en": "Web Workers",
+    "category": "platform",
+    "kind": "technology",
+    "description": "把计算放到独立线程，通过消息与主线程交换数据，使复杂任务减少对界面响应的影响。",
+    "useCases": [
+      "图像计算",
+      "大数据处理",
+      "模型解析"
+    ],
+    "tags": [
+      "Worker",
+      "多线程",
+      "主线程"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API",
+    "demo": "platform",
+    "related": [
+      "offscreen-canvas",
+      "webassembly"
+    ]
+  },
+  {
+    "id": "offscreen-canvas",
+    "name": "离屏画布",
+    "en": "OffscreenCanvas",
+    "category": "platform",
+    "kind": "technology",
+    "description": "将画布绘制与页面 DOM 分离，并可在 worker 中渲染；具体上下文和功能需检测支持。",
+    "useCases": [
+      "后台绘图",
+      "图像生成",
+      "渲染任务隔离"
+    ],
+    "tags": [
+      "OffscreenCanvas",
+      "Worker",
+      "离屏"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas",
+    "demo": "platform",
+    "related": [
+      "web-workers",
+      "canvas-2d"
+    ]
+  },
+  {
+    "id": "service-workers",
+    "name": "服务工作线程",
+    "en": "Service Workers",
+    "category": "platform",
+    "kind": "technology",
+    "description": "在安全上下文中拦截网络请求并管理缓存，支撑离线访问和应用式体验。",
+    "useCases": [
+      "离线网站",
+      "资源缓存",
+      "渐进式应用"
+    ],
+    "tags": [
+      "ServiceWorker",
+      "Cache API",
+      "离线"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API",
+    "demo": "platform",
+    "related": [
+      "pwa",
+      "indexed-db"
+    ]
+  },
+  {
+    "id": "pwa",
+    "name": "渐进式网页应用",
+    "en": "Progressive Web App / PWA",
+    "category": "platform",
+    "kind": "technology",
+    "description": "组合清单、离线策略与安装体验，使网站具有部分应用能力；安装行为因浏览器与系统而异。",
+    "useCases": [
+      "可安装工具",
+      "离线阅读",
+      "跨设备应用"
+    ],
+    "tags": [
+      "PWA",
+      "Manifest",
+      "可安装"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps",
+    "demo": "platform",
+    "related": [
+      "service-workers"
+    ]
+  },
+  {
+    "id": "webassembly",
+    "name": "WebAssembly 二进制运行",
+    "en": "WebAssembly",
+    "category": "platform",
+    "kind": "technology",
+    "description": "在浏览器中运行编译后的模块，适合复用计算密集型代码，通常与 JavaScript 共同工作。",
+    "useCases": [
+      "图像编解码",
+      "科学计算",
+      "原生代码移植"
+    ],
+    "tags": [
+      "Wasm",
+      "WASM",
+      "二进制"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://webassembly.org/",
+    "demo": "code",
+    "related": [
+      "web-workers"
+    ]
+  },
+  {
+    "id": "resize-observer",
+    "name": "尺寸变化观察",
+    "en": "ResizeObserver",
+    "category": "platform",
+    "kind": "technology",
+    "description": "观察元素内容或边框尺寸变化，为自适应画布、图表与组件提供布局依据。",
+    "useCases": [
+      "三维画布适配",
+      "图表重排",
+      "组件测量"
+    ],
+    "tags": [
+      "ResizeObserver",
+      "容器尺寸"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver",
+    "demo": "platform",
+    "related": [
+      "three-js",
+      "container-queries"
+    ]
+  },
+  {
+    "id": "popover-api",
+    "name": "原生浮层接口",
+    "en": "Popover API",
+    "category": "platform",
+    "kind": "technology",
+    "description": "把弹出内容放入顶层并管理显示行为，便于构建菜单与提示；交互语义仍需正确设计。",
+    "useCases": [
+      "轻量菜单",
+      "帮助提示",
+      "信息浮层"
+    ],
+    "tags": [
+      "popover",
+      "Top Layer",
+      "浮层"
+    ],
+    "level": "基础",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API",
+    "demo": "platform",
+    "related": [
+      "css-anchor-positioning"
+    ]
+  },
+  {
+    "id": "websocket",
+    "name": "双向实时连接",
+    "en": "WebSocket",
+    "category": "platform",
+    "kind": "technology",
+    "description": "在客户端与服务器之间保持双向消息连接，适合持续更新的协作和实时数据。",
+    "useCases": [
+      "协作界面",
+      "实时数据",
+      "在线聊天室"
+    ],
+    "tags": [
+      "WebSocket",
+      "ws",
+      "wss",
+      "实时"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+    "demo": "platform",
+    "related": [
+      "webtransport"
+    ]
+  },
+  {
+    "id": "web-audio",
+    "name": "浏览器音频处理",
+    "en": "Web Audio API",
+    "category": "platform",
+    "kind": "technology",
+    "description": "通过音频节点进行播放、分析与合成；声音播放通常需要用户交互触发。",
+    "useCases": [
+      "音频可视化",
+      "互动声音",
+      "网页乐器"
+    ],
+    "tags": [
+      "AudioContext",
+      "AnalyserNode",
+      "声音"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API",
+    "demo": "particle",
+    "related": [
+      "canvas-2d"
+    ]
+  },
+  {
+    "id": "webtransport",
+    "name": "现代实时传输",
+    "en": "WebTransport",
+    "category": "platform",
+    "kind": "technology",
+    "description": "连接兼容的 HTTP/3 服务端并使用可靠流与数据报；需要 HTTPS，旧环境应提供替代连接。",
+    "useCases": [
+      "低延迟互动",
+      "流式数据",
+      "实时游戏"
+    ],
+    "tags": [
+      "HTTP/3",
+      "QUIC",
+      "Datagram"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/WebTransport",
+    "demo": "platform",
+    "related": [
+      "websocket"
+    ]
+  },
+  {
+    "id": "vite",
+    "name": "Vite 开发与构建",
+    "en": "Vite",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "为现代前端提供开发服务器和生产构建，将模块化源码转为可发布资源。",
+    "useCases": [
+      "本地开发",
+      "模块构建",
+      "静态部署"
+    ],
+    "tags": [
+      "Vite",
+      "HMR",
+      "构建"
+    ],
+    "level": "基础",
+    "support": "依环境而定",
+    "doc": "https://vite.dev/guide/",
+    "demo": "performance",
+    "related": [
+      "es-modules",
+      "code-splitting"
+    ]
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript 静态类型",
+    "en": "TypeScript",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "为 JavaScript 添加静态类型检查，帮助在开发阶段发现不一致；运行时数据仍需单独校验。",
+    "useCases": [
+      "大型项目",
+      "接口约束",
+      "组件开发"
+    ],
+    "tags": [
+      "TS",
+      "TypeScript",
+      "类型"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://www.typescriptlang.org/docs/",
+    "demo": "code",
+    "related": [
+      "zod"
+    ]
+  },
+  {
+    "id": "es-modules",
+    "name": "原生模块",
+    "en": "ECMAScript Modules / ESM",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "用 import 与 export 显式组织依赖，支持浏览器和工具对模块代码进行加载与分析。",
+    "useCases": [
+      "静态网站",
+      "代码组织",
+      "按需加载"
+    ],
+    "tags": [
+      "ESM",
+      "import",
+      "export"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+    "demo": "code",
+    "related": [
+      "vite",
+      "code-splitting"
+    ]
+  },
+  {
+    "id": "code-splitting",
+    "name": "代码分包",
+    "en": "Code Splitting",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "将代码拆为按页面或功能加载的块，减少首次传输与执行负担。",
+    "useCases": [
+      "大型应用",
+      "延迟三维加载",
+      "路由切换"
+    ],
+    "tags": [
+      "Dynamic Import",
+      "Chunk",
+      "分包"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import",
+    "demo": "performance",
+    "related": [
+      "es-modules",
+      "lazy-loading"
+    ]
+  },
+  {
+    "id": "lazy-loading",
+    "name": "按需加载",
+    "en": "Lazy Loading",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "推迟非关键图片、模块或内容的加载，让首次显示优先获得必要资源。",
+    "useCases": [
+      "长页面",
+      "图片目录",
+      "重型组件"
+    ],
+    "tags": [
+      "loading=lazy",
+      "按需"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading",
+    "demo": "performance",
+    "related": [
+      "intersection-observer",
+      "code-splitting"
+    ]
+  },
+  {
+    "id": "responsive-images",
+    "name": "响应式图片",
+    "en": "Responsive Images",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "通过 srcset、sizes 与 picture 为不同显示条件选择图片，减少不必要的下载并保留清晰度。",
+    "useCases": [
+      "图片展示",
+      "移动端内容",
+      "高分辨率屏幕"
+    ],
+    "tags": [
+      "srcset",
+      "sizes",
+      "picture"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images",
+    "demo": "performance",
+    "related": [
+      "responsive-design"
+    ]
+  },
+  {
+    "id": "core-web-vitals",
+    "name": "核心网页指标",
+    "en": "Core Web Vitals",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "用 LCP、INP 和 CLS 衡量加载、交互响应与视觉稳定性，应结合真实用户数据评估。",
+    "useCases": [
+      "体验监测",
+      "性能优化",
+      "上线验收"
+    ],
+    "tags": [
+      "LCP",
+      "INP",
+      "CLS",
+      "CWV"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://web.dev/articles/vitals",
+    "demo": "performance",
+    "related": [
+      "lighthouse"
+    ]
+  },
+  {
+    "id": "server-side-rendering",
+    "name": "服务端渲染",
+    "en": "Server-side Rendering / SSR",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "在服务器生成页面 HTML，可改善内容首次可用性；交互恢复与服务器成本仍需设计。",
+    "useCases": [
+      "内容入口",
+      "动态网站",
+      "搜索访问"
+    ],
+    "tags": [
+      "SSR",
+      "Hydration",
+      "服务端"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://vuejs.org/guide/scaling-up/ssr.html",
+    "demo": "performance",
+    "related": [
+      "next-js",
+      "islands-architecture"
+    ]
+  },
+  {
+    "id": "islands-architecture",
+    "name": "孤岛架构",
+    "en": "Islands Architecture",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "主要页面保持静态，只给需要交互的区域加载客户端代码，适合内容与少量交互混合的网站。",
+    "useCases": [
+      "内容展示",
+      "作品集",
+      "局部交互"
+    ],
+    "tags": [
+      "Islands",
+      "局部激活",
+      "Astro"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://docs.astro.build/en/concepts/islands/",
+    "demo": "performance",
+    "related": [
+      "astro"
+    ]
+  },
+  {
+    "id": "react-server-components",
+    "name": "React 服务端组件",
+    "en": "React Server Components",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "在服务端或构建时执行部分组件，减少向客户端发送的组件代码；需通过支持的框架与构建链使用。",
+    "useCases": [
+      "数据密集页面",
+      "内容与交互混合",
+      "React 全栈应用"
+    ],
+    "tags": [
+      "RSC",
+      "Server Components"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://react.dev/reference/rsc/server-components",
+    "demo": "code",
+    "related": [
+      "react",
+      "next-js"
+    ]
+  },
+  {
+    "id": "virtualization",
+    "name": "长列表虚拟化",
+    "en": "List Virtualization",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "只渲染可见范围附近的列表项，降低大量数据对 DOM 与布局的压力。",
+    "useCases": [
+      "长列表",
+      "大型表格",
+      "素材库"
+    ],
+    "tags": [
+      "Virtual List",
+      "Virtualization",
+      "窗口化"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://tanstack.com/virtual/latest/docs/introduction",
+    "demo": "performance",
+    "related": [
+      "tanstack-query"
+    ]
+  },
+  {
+    "id": "design-tokens",
+    "name": "设计令牌",
+    "en": "Design Tokens",
+    "category": "delivery",
+    "kind": "technology",
+    "description": "把颜色、字号和间距作为有语义的设计数据管理，帮助代码与设计系统保持一致。",
+    "useCases": [
+      "主题系统",
+      "组件库",
+      "跨端规范"
+    ],
+    "tags": [
+      "Tokens",
+      "DTCG",
+      "设计系统"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://www.designtokens.org/TR/drafts/format/",
+    "demo": "code",
+    "related": [
+      "css-custom-properties",
+      "web-components"
+    ]
+  },
+  {
+    "id": "semantic-html",
+    "name": "语义化 HTML",
+    "en": "Semantic HTML",
+    "category": "quality",
+    "kind": "technology",
+    "description": "使用标题、导航、按钮与表单等合适元素表达内容结构，让浏览器和辅助工具理解界面。",
+    "useCases": [
+      "可访问页面",
+      "搜索理解",
+      "键盘交互"
+    ],
+    "tags": [
+      "HTML",
+      "Semantics",
+      "语义"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Glossary/Semantics",
+    "demo": "quality",
+    "related": [
+      "wai-aria",
+      "keyboard-navigation"
+    ]
+  },
+  {
+    "id": "wai-aria",
+    "name": "辅助技术语义",
+    "en": "WAI-ARIA",
+    "category": "quality",
+    "kind": "technology",
+    "description": "在必要时补充角色、状态与关系，为自定义控件提供辅助技术信息；优先使用语义正确的原生元素。",
+    "useCases": [
+      "自定义控件",
+      "状态播报",
+      "无障碍弹窗"
+    ],
+    "tags": [
+      "ARIA",
+      "APG",
+      "Screen Reader"
+    ],
+    "level": "进阶",
+    "support": "广泛可用",
+    "doc": "https://www.w3.org/WAI/ARIA/apg/",
+    "demo": "quality",
+    "related": [
+      "semantic-html"
+    ]
+  },
+  {
+    "id": "keyboard-navigation",
+    "name": "键盘与焦点管理",
+    "en": "Keyboard Navigation & Focus",
+    "category": "quality",
+    "kind": "technology",
+    "description": "让关键操作可由键盘完成，保持可见焦点与合理顺序，并正确处理弹窗焦点恢复。",
+    "useCases": [
+      "检索工具",
+      "弹窗交互",
+      "表单操作"
+    ],
+    "tags": [
+      "Focus",
+      "Tab",
+      "Keyboard"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
+    "demo": "quality",
+    "related": [
+      "semantic-html"
+    ]
+  },
+  {
+    "id": "reduced-motion",
+    "name": "减少动态偏好",
+    "en": "prefers-reduced-motion",
+    "category": "quality",
+    "kind": "technology",
+    "description": "尊重用户减少动画的系统偏好，降低大幅位移、持续旋转与非必要动效。",
+    "useCases": [
+      "三维展示",
+      "滚动动画",
+      "自动播放场景"
+    ],
+    "tags": [
+      "prefers-reduced-motion",
+      "无障碍",
+      "动画偏好"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
+    "demo": "quality",
+    "related": [
+      "css-keyframes",
+      "scroll-driven-animations"
+    ]
+  },
+  {
+    "id": "color-contrast",
+    "name": "色彩对比度",
+    "en": "Color Contrast",
+    "category": "quality",
+    "kind": "technology",
+    "description": "检查文字与背景的亮度对比，并用形状、文字等补充颜色传递的信息。",
+    "useCases": [
+      "深色网站",
+      "状态提示",
+      "玻璃效果"
+    ],
+    "tags": [
+      "WCAG",
+      "Contrast",
+      "可读性"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "demo": "quality",
+    "related": [
+      "backdrop-filter"
+    ]
+  },
+  {
+    "id": "playwright",
+    "name": "浏览器自动化验证",
+    "en": "Playwright",
+    "category": "quality",
+    "kind": "technology",
+    "description": "在真实浏览器引擎中验证页面操作、网络与截图，适合跨浏览器交互回归。",
+    "useCases": [
+      "搜索筛选验证",
+      "端到端测试",
+      "视觉回归"
+    ],
+    "tags": [
+      "E2E",
+      "Playwright",
+      "浏览器测试"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://playwright.dev/docs/intro",
+    "demo": "quality",
+    "related": [
+      "vitest"
+    ]
+  },
+  {
+    "id": "vitest",
+    "name": "模块与组件测试",
+    "en": "Vitest",
+    "category": "quality",
+    "kind": "technology",
+    "description": "验证模块逻辑和适配的组件行为，适合快速检查计算、数据处理与界面单元。",
+    "useCases": [
+      "数据逻辑",
+      "组件测试",
+      "持续集成"
+    ],
+    "tags": [
+      "Vitest",
+      "Unit Test",
+      "单元测试"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://vitest.dev/guide/",
+    "demo": "quality",
+    "related": [
+      "vite",
+      "playwright"
+    ]
+  },
+  {
+    "id": "lighthouse",
+    "name": "网页质量检查",
+    "en": "Lighthouse",
+    "category": "quality",
+    "kind": "technology",
+    "description": "通过自动审计提供性能、可访问性等改进线索；单次分数不能替代真实用户和人工检查。",
+    "useCases": [
+      "性能审计",
+      "上线检查",
+      "问题定位"
+    ],
+    "tags": [
+      "Lighthouse",
+      "Audit",
+      "网页质量"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.chrome.com/docs/lighthouse/overview/",
+    "demo": "quality",
+    "related": [
+      "core-web-vitals"
+    ]
+  },
+  {
+    "id": "progressive-enhancement",
+    "name": "渐进增强策略",
+    "en": "Progressive Enhancement",
+    "category": "quality",
+    "kind": "technology",
+    "description": "先让核心内容与操作可用，再按功能检测叠加新能力，使不同环境得到可靠的基本体验。",
+    "useCases": [
+      "跨电脑展示",
+      "新 API 应用",
+      "可访问交互"
+    ],
+    "tags": [
+      "Feature Detection",
+      "Fallback",
+      "渐进增强"
+    ],
+    "level": "基础",
+    "support": "广泛可用",
+    "doc": "https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement",
+    "demo": "quality",
+    "related": [
+      "view-transitions",
+      "webgpu"
+    ]
+  },
+  {
+    "id": "content-security-policy",
+    "name": "内容安全策略",
+    "en": "Content Security Policy / CSP",
+    "category": "quality",
+    "kind": "technology",
+    "description": "通过响应头或适用的元信息限制脚本与资源来源，降低内容注入风险；策略需与部署方式匹配。",
+    "useCases": [
+      "公开网站",
+      "第三方资源",
+      "应用防护"
+    ],
+    "tags": [
+      "CSP",
+      "script-src",
+      "安全"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+    "demo": "quality",
+    "related": [
+      "es-modules"
+    ]
+  },
+  {
+    "id": "view-transitions",
+    "name": "原生视图过渡",
+    "en": "View Transition API",
+    "category": "emerging",
+    "kind": "technology",
+    "description": "在界面状态或页面切换时生成可控制的过渡，支持范围随同页与跨文档能力而变化，需保留普通导航。",
+    "useCases": [
+      "页面切换",
+      "卡片展开",
+      "图片过渡"
+    ],
+    "tags": [
+      "View Transitions",
+      "startViewTransition",
+      "页面过渡"
+    ],
+    "level": "进阶",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API",
+    "demo": "motion",
+    "related": [
+      "progressive-enhancement"
+    ]
+  },
+  {
+    "id": "speculation-rules",
+    "name": "导航预推测",
+    "en": "Speculation Rules API",
+    "category": "emerging",
+    "kind": "technology",
+    "description": "向浏览器提示可预取或预渲染的页面，改善后续导航；会增加资源消耗，需要筛选安全且有价值的目标。",
+    "useCases": [
+      "多页内容站",
+      "高概率导航",
+      "快速页面切换"
+    ],
+    "tags": [
+      "Prerender",
+      "Prefetch",
+      "预渲染"
+    ],
+    "level": "实验",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API",
+    "demo": "performance",
+    "related": [
+      "progressive-enhancement"
+    ]
+  },
+  {
+    "id": "css-painting-api",
+    "name": "CSS 自定义绘制",
+    "en": "CSS Painting API / Houdini",
+    "category": "emerging",
+    "kind": "technology",
+    "description": "通过绘制 worklet 生成可作为 CSS 图像使用的内容；实现支持有限，生产使用需提供替代背景。",
+    "useCases": [
+      "程序化纹理",
+      "自定义边框",
+      "图形装饰"
+    ],
+    "tags": [
+      "Houdini",
+      "Paint Worklet",
+      "程序化背景"
+    ],
+    "level": "实验",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API",
+    "demo": "gradient",
+    "related": [
+      "canvas-2d"
+    ]
+  },
+  {
+    "id": "css-masonry",
+    "name": "原生瀑布流探索",
+    "en": "CSS Grid Lanes / Masonry Layout",
+    "category": "emerging",
+    "kind": "technology",
+    "description": "探索由浏览器负责错落紧密排列的布局能力；规范与实现仍在演进，应通过特性检测保留网格回退。",
+    "useCases": [
+      "摄影画廊",
+      "不同高度卡片",
+      "素材墙"
+    ],
+    "tags": [
+      "Masonry",
+      "Grid Lanes",
+      "瀑布流"
+    ],
+    "level": "实验",
+    "support": "渐进增强",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_lanes",
+    "demo": "grid",
+    "related": [
+      "css-grid"
+    ]
+  },
+  {
+    "id": "webxr",
+    "name": "网页扩展现实",
+    "en": "WebXR Device API",
+    "category": "emerging",
+    "kind": "technology",
+    "description": "为支持的设备提供虚拟现实与增强现实会话，需要安全上下文、硬件支持和相关授权。",
+    "useCases": [
+      "沉浸式场景",
+      "空间产品预览",
+      "XR 体验"
+    ],
+    "tags": [
+      "XR",
+      "VR",
+      "AR",
+      "增强现实"
+    ],
+    "level": "进阶",
+    "support": "依环境而定",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API",
+    "demo": "3d",
+    "related": [
+      "three-js",
+      "webgl"
+    ]
+  },
+  {
+    "id": "webnn",
+    "name": "浏览器神经网络接口",
+    "en": "Web Neural Network API / WebNN",
+    "category": "emerging",
+    "kind": "technology",
+    "description": "探索在浏览器中通过系统计算能力执行神经网络推理；当前可用性需按浏览器和设备确认。",
+    "useCases": [
+      "端侧模型推理",
+      "图像识别探索",
+      "智能交互研究"
+    ],
+    "tags": [
+      "WebNN",
+      "Neural Network",
+      "端侧推理"
+    ],
+    "level": "实验",
+    "support": "依环境而定",
+    "doc": "https://www.w3.org/TR/webnn/",
+    "demo": "platform",
+    "related": [
+      "webgpu",
+      "webassembly"
+    ]
+  },
+  {
+    "id": "bento-grid",
+    "name": "便当网格",
+    "en": "Bento Grid",
+    "category": "styles",
+    "kind": "style",
+    "description": "大小不同的矩形模块组成紧凑的分区网格，像便当盒一样并列展示功能与指标。这是常用布局称呼，不是独立的 CSS 规范。",
+    "useCases": [
+      "功能总览",
+      "产品亮点",
+      "数据面板"
+    ],
+    "tags": [
+      "Bento",
+      "便当布局",
+      "模块化",
+      "Grid"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://webflow.com/made-in-webflow/bento?cloneable=true",
+    "demo": "bento",
+    "related": [
+      "card-ui",
+      "asymmetric-layout"
+    ]
+  },
+  {
+    "id": "swiss-style",
+    "name": "瑞士国际主义排版",
+    "en": "Swiss / International Typographic Style",
+    "category": "styles",
+    "kind": "style",
+    "description": "以清晰网格、无衬线字体、左对齐和明确的字号层级组织信息；留白与对齐关系比装饰更显眼。",
+    "useCases": [
+      "技术品牌",
+      "展览信息",
+      "企业官网"
+    ],
+    "tags": [
+      "Swiss Style",
+      "International Typographic Style",
+      "瑞士风格",
+      "国际主义",
+      "排版"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.smashingmagazine.com/2009/07/lessons-from-swiss-style-graphic-design/",
+    "demo": "swiss",
+    "related": [
+      "minimalism",
+      "editorial-design"
+    ]
+  },
+  {
+    "id": "editorial-design",
+    "name": "杂志编辑风",
+    "en": "Editorial Design",
+    "category": "styles",
+    "kind": "style",
+    "description": "把页面按阅读节奏编排：大标题、导语、正文、图片与旁注形成层级，常用复合网格安排不同宽度的内容。",
+    "useCases": [
+      "品牌故事",
+      "深度文章",
+      "设计作品集"
+    ],
+    "tags": [
+      "Editorial",
+      "Magazine",
+      "杂志风",
+      "编辑式排版"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://www.smashingmagazine.com/2019/07/inspired-design-decisions-pressing-matters/",
+    "demo": "editorial",
+    "related": [
+      "swiss-style",
+      "asymmetric-layout"
+    ]
+  },
+  {
+    "id": "minimalism",
+    "name": "极简主义",
+    "en": "Minimalism",
+    "category": "styles",
+    "kind": "style",
+    "description": "减少装饰与次要元素，使用有限配色、充足留白和少数清晰的视觉重点。极简界面仍需要可辨认的按钮和完整的信息。",
+    "useCases": [
+      "作品展示",
+      "品牌官网",
+      "专注型工具"
+    ],
+    "tags": [
+      "Minimal",
+      "Minimalist",
+      "极简",
+      "留白"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/characteristics-minimalism/",
+    "demo": "minimal",
+    "related": [
+      "monochrome",
+      "flat-design"
+    ]
+  },
+  {
+    "id": "glassmorphism",
+    "name": "毛玻璃拟态",
+    "en": "Glassmorphism",
+    "category": "styles",
+    "kind": "style",
+    "description": "半透明面板叠在背景之上，利用背景模糊、细边框与光感表达深度。内容对比度需要按实际背景检查。",
+    "useCases": [
+      "浮层面板",
+      "空间界面",
+      "局部信息卡"
+    ],
+    "tags": [
+      "Glass",
+      "Frosted Glass",
+      "毛玻璃",
+      "玻璃拟态",
+      "Acrylic"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/glassmorphism/",
+    "demo": "glass",
+    "related": [
+      "fluent-design",
+      "dark-ui"
+    ]
+  },
+  {
+    "id": "neumorphism",
+    "name": "新拟态与柔软界面",
+    "en": "Neumorphism / Soft UI",
+    "category": "styles",
+    "kind": "style",
+    "description": "控件与背景使用相近颜色，成对的浅色高光和暗色阴影形成凸起或凹下的软质表面。Soft UI 常作为同类风格别名；需补足对比度与可点击提示。",
+    "useCases": [
+      "局部控制面板",
+      "概念界面",
+      "仪表盘装饰"
+    ],
+    "tags": [
+      "Neumorphism",
+      "Soft UI",
+      "新拟物",
+      "新拟态",
+      "柔软界面"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/skeuomorphism/",
+    "demo": "soft",
+    "related": [
+      "skeuomorphism",
+      "flat-design"
+    ]
+  },
+  {
+    "id": "neobrutalism",
+    "name": "新粗野主义",
+    "en": "Neo-brutalism",
+    "category": "styles",
+    "kind": "style",
+    "description": "粗边框、硬投影、块状布局与鲜明色块构成直接的视觉语言；相较原始粗野风，通常有更整齐的结构与更丰富的颜色。",
+    "useCases": [
+      "创意品牌",
+      "活动落地页",
+      "独立产品"
+    ],
+    "tags": [
+      "Neobrutalism",
+      "Neubrutalism",
+      "Neo Brutalism",
+      "新野兽派",
+      "新粗野"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/neobrutalism/",
+    "demo": "brutal",
+    "related": [
+      "brutalism",
+      "flat-design"
+    ]
+  },
+  {
+    "id": "brutalism",
+    "name": "网页粗野主义",
+    "en": "Brutalism",
+    "category": "styles",
+    "kind": "style",
+    "description": "保留裸露、粗粝或实用的页面外观，可能使用近似原生 HTML 的链接、等宽字体与有限色彩。它是设计取向，不要求刻意破坏可用性。",
+    "useCases": [
+      "实验作品集",
+      "艺术项目",
+      "文字档案"
+    ],
+    "tags": [
+      "Brutalist",
+      "Raw HTML",
+      "粗野风",
+      "裸网页"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/brutalism-antidesign/",
+    "demo": "brutal",
+    "related": [
+      "terminal-ui",
+      "neobrutalism"
+    ]
+  },
+  {
+    "id": "dark-ui",
+    "name": "深色界面",
+    "en": "Dark UI / Dark Mode",
+    "category": "styles",
+    "kind": "style",
+    "description": "以深色表面承载浅色文字，通过多级表面亮度与有限强调色区分内容。深色主题需要单独设计文字、边框与状态色。",
+    "useCases": [
+      "开发工具",
+      "媒体展示",
+      "数据工作台"
+    ],
+    "tags": [
+      "Dark Mode",
+      "Dark Theme",
+      "深色模式",
+      "暗色"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://fluent2.microsoft.design/color",
+    "demo": "dark",
+    "related": [
+      "monochrome",
+      "glassmorphism"
+    ]
+  },
+  {
+    "id": "monochrome",
+    "name": "单色系设计",
+    "en": "Monochromatic Design",
+    "category": "styles",
+    "kind": "style",
+    "description": "围绕一种色相改变明度与饱和度，依靠深浅、大小和间距建立层级；黑白灰是常见例子，但单色系也可以是蓝色或绿色。",
+    "useCases": [
+      "品牌展示",
+      "内容阅读",
+      "摄影作品集"
+    ],
+    "tags": [
+      "Monochrome",
+      "Monochromatic",
+      "单色",
+      "黑白灰"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.adobe.com/uk/express/discover/ideas/monochromatic-design",
+    "demo": "mono",
+    "related": [
+      "minimalism",
+      "duotone"
+    ]
+  },
+  {
+    "id": "duotone",
+    "name": "双色调",
+    "en": "Duotone",
+    "category": "styles",
+    "kind": "style",
+    "description": "用两种主色重映射图像的明暗层次，产生统一的图片色调；网页中的双色效果常用渐变映射或混合实现，并不等同于印刷专色分版。",
+    "useCases": [
+      "活动海报",
+      "图片统一处理",
+      "音乐与文化品牌"
+    ],
+    "tags": [
+      "Duotone",
+      "双色",
+      "双色映射",
+      "Gradient Map"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.adobe.com/creativecloud/photography/discover/duotone-effect.html",
+    "demo": "duotone",
+    "related": [
+      "monochrome",
+      "gradient-mesh"
+    ]
+  },
+  {
+    "id": "gradient-mesh",
+    "name": "网格渐变",
+    "en": "Gradient Mesh",
+    "category": "styles",
+    "kind": "style",
+    "description": "多个颜色控制点在平面上形成连续而不规则的色彩过渡。网页里常把类似外观称为 Mesh Gradient，可用叠加渐变、图像或着色器实现。",
+    "useCases": [
+      "抽象背景",
+      "品牌主视觉",
+      "局部色彩装饰"
+    ],
+    "tags": [
+      "Mesh Gradient",
+      "网格渐变",
+      "多点渐变",
+      "自由渐变"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://helpx.adobe.com/illustrator/desktop/paint-and-fill/create-and-edit-meshes/create-mesh-objects.html",
+    "demo": "mesh",
+    "related": [
+      "aurora-gradient",
+      "grain-noise"
+    ]
+  },
+  {
+    "id": "aurora-gradient",
+    "name": "极光渐变",
+    "en": "Aurora Gradient",
+    "category": "styles",
+    "kind": "style",
+    "description": "模糊的多色光带或色团交叠，常伴随缓慢流动，形成类似极光的背景。这是视觉效果的惯用称呼，不是规范化的渐变类型。",
+    "useCases": [
+      "科技主视觉",
+      "氛围背景",
+      "空状态插画"
+    ],
+    "tags": [
+      "Aurora",
+      "Aurora Background",
+      "极光",
+      "光晕渐变"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://tympanus.net/Development/AmbientCanvasBackgrounds/index.html",
+    "demo": "aurora",
+    "related": [
+      "gradient-mesh",
+      "generative-art"
+    ]
+  },
+  {
+    "id": "grain-noise",
+    "name": "颗粒与噪点质感",
+    "en": "Grain / Noise Texture",
+    "category": "styles",
+    "kind": "style",
+    "description": "在色块、渐变或光影上加入细小颗粒，模拟纸张、胶片或丝网印刷的质感。颗粒强度要控制在不干扰文字与图标辨认的范围内。",
+    "useCases": [
+      "印刷感视觉",
+      "背景质感",
+      "插画着色"
+    ],
+    "tags": [
+      "Grain",
+      "Noise",
+      "Film Grain",
+      "颗粒",
+      "噪点",
+      "Risograph"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://tympanus.net/codrops/2022/03/07/creating-a-risograph-grain-light-effect-in-three-js/",
+    "demo": "grain",
+    "related": [
+      "gradient-mesh",
+      "retro-futurism"
+    ]
+  },
+  {
+    "id": "material-design",
+    "name": "Material 设计体系",
+    "en": "Material Design",
+    "category": "styles",
+    "kind": "style",
+    "description": "Google 的设计系统以一致的颜色角色、字阶、形状、组件与动效规则组织界面；它是完整的设计体系，不只是给卡片加阴影。",
+    "useCases": [
+      "产品应用",
+      "跨端组件",
+      "管理界面"
+    ],
+    "tags": [
+      "Material",
+      "Material 3",
+      "M3",
+      "谷歌设计系统"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://m3.material.io/",
+    "demo": "material",
+    "related": [
+      "card-ui",
+      "microinteractions"
+    ]
+  },
+  {
+    "id": "fluent-design",
+    "name": "Fluent 设计体系",
+    "en": "Fluent Design",
+    "category": "styles",
+    "kind": "style",
+    "description": "Microsoft 的设计系统用一致的排版、颜色、层级与组件构建界面，并定义 Solid、Acrylic、Mica、Smoke 等材质；不同材质有各自的适用范围。",
+    "useCases": [
+      "办公产品",
+      "企业应用",
+      "系统风格界面"
+    ],
+    "tags": [
+      "Fluent",
+      "Fluent 2",
+      "微软设计系统",
+      "Acrylic",
+      "Mica"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://fluent2.microsoft.design/material",
+    "demo": "fluent",
+    "related": [
+      "glassmorphism",
+      "dark-ui"
+    ]
+  },
+  {
+    "id": "flat-design",
+    "name": "扁平化设计",
+    "en": "Flat Design",
+    "category": "styles",
+    "kind": "style",
+    "description": "以简化形状、纯色和清晰图标减少真实材质的模拟。需要用边框、位置、颜色或适量层次提示哪些元素可以操作。",
+    "useCases": [
+      "信息工具",
+      "移动界面",
+      "组件基础风格"
+    ],
+    "tags": [
+      "Flat",
+      "Flat UI",
+      "Flat 2.0",
+      "扁平化"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/flat-design-best-practices/",
+    "demo": "flat",
+    "related": [
+      "minimalism",
+      "skeuomorphism"
+    ]
+  },
+  {
+    "id": "skeuomorphism",
+    "name": "拟物化设计",
+    "en": "Skeuomorphism",
+    "category": "styles",
+    "kind": "style",
+    "description": "借用真实物体的材质、形状或操作暗示，例如旋钮、纸张与仪表，让数字控件与熟悉的实体经验建立联系。",
+    "useCases": [
+      "音频控制",
+      "仪表模拟",
+      "学习型界面"
+    ],
+    "tags": [
+      "Skeuomorphic",
+      "拟物",
+      "拟物化",
+      "真实材质"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/skeuomorphism/",
+    "demo": "skeuo",
+    "related": [
+      "neumorphism",
+      "flat-design"
+    ]
+  },
+  {
+    "id": "card-ui",
+    "name": "卡片式界面",
+    "en": "Card UI",
+    "category": "styles",
+    "kind": "style",
+    "description": "把一个主题的图片、标题、摘要和操作放在有边界的容器中，形成可重复组合的内容单元。它是信息组织模式，可搭配多种视觉风格。",
+    "useCases": [
+      "内容聚合",
+      "商品列表",
+      "功能面板"
+    ],
+    "tags": [
+      "Cards",
+      "Card-based UI",
+      "卡片",
+      "卡片布局"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/cards-component/",
+    "demo": "cards",
+    "related": [
+      "bento-grid",
+      "masonry-layout"
+    ]
+  },
+  {
+    "id": "split-screen",
+    "name": "分屏布局",
+    "en": "Split-screen Layout",
+    "category": "styles",
+    "kind": "style",
+    "description": "把页面划分为两个主要区域，让两组内容并列比较或互相补充；常见组合是文字与视觉、介绍与表单，窄屏时可改为上下排列。",
+    "useCases": [
+      "产品与说明",
+      "登录注册",
+      "双选项入口"
+    ],
+    "tags": [
+      "Split Screen",
+      "Split Layout",
+      "分屏",
+      "左右分栏"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://s3.amazonaws.com/uxpin/uxpin_web_design_trends_2019.pdf",
+    "demo": "split",
+    "related": [
+      "asymmetric-layout",
+      "editorial-design"
+    ]
+  },
+  {
+    "id": "asymmetric-layout",
+    "name": "非对称布局",
+    "en": "Asymmetric Layout",
+    "category": "styles",
+    "kind": "style",
+    "description": "让两侧的尺寸、位置或内容密度不相同，再用视觉重量与留白取得整体平衡。非对称可以保持规则网格与明确的阅读顺序。",
+    "useCases": [
+      "创意作品集",
+      "品牌叙事",
+      "图文展示"
+    ],
+    "tags": [
+      "Asymmetry",
+      "Asymmetrical Layout",
+      "非对称",
+      "不对称排版"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://www.smashingmagazine.com/2015/06/design-principles-compositional-balance-symmetry-asymmetry/",
+    "demo": "asymmetric",
+    "related": [
+      "editorial-design",
+      "bento-grid"
+    ]
+  },
+  {
+    "id": "masonry-layout",
+    "name": "瀑布流布局",
+    "en": "Masonry Layout",
+    "category": "styles",
+    "kind": "style",
+    "description": "把不同高度的项目放入可用的纵向空间，形成错落的列，减少整齐行布局留下的空隙。视觉排列仍需兼顾 DOM 的阅读与键盘顺序。",
+    "useCases": [
+      "图片图库",
+      "灵感收藏",
+      "异质内容列表"
+    ],
+    "tags": [
+      "Masonry",
+      "Cascading Grid",
+      "瀑布流",
+      "砖石布局"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://masonry.desandro.com/",
+    "demo": "masonry",
+    "related": [
+      "card-ui",
+      "asymmetric-layout"
+    ]
+  },
+  {
+    "id": "scrollytelling",
+    "name": "滚动叙事",
+    "en": "Scrollytelling",
+    "category": "styles",
+    "kind": "style",
+    "description": "按滚动经过的段落推进故事，同时更新旁边或背景中的图表、图片与场景。关键是内容阶段与视觉变化之间有明确联系。",
+    "useCases": [
+      "数据故事",
+      "产品解析",
+      "专题报道"
+    ],
+    "tags": [
+      "Scroll Story",
+      "Scroll-driven Storytelling",
+      "滚动讲故事",
+      "滚动叙事"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://github.com/russellsamora/scrollama",
+    "demo": "scroll",
+    "related": [
+      "parallax",
+      "three-d-hero"
+    ]
+  },
+  {
+    "id": "parallax",
+    "name": "视差效果",
+    "en": "Parallax",
+    "category": "styles",
+    "kind": "style",
+    "description": "让前景与背景以不同幅度或速度移动，制造层次与距离感；移动可以由滚动或指针触发，应提供减少动态时的稳定呈现。",
+    "useCases": [
+      "分层主视觉",
+      "画廊",
+      "空间氛围"
+    ],
+    "tags": [
+      "Parallax Scrolling",
+      "视差滚动",
+      "视差"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://tympanus.net/Tutorials/HorizontalParallaxGallery/index.html",
+    "demo": "parallax",
+    "related": [
+      "scrollytelling",
+      "three-d-hero"
+    ]
+  },
+  {
+    "id": "kinetic-typography",
+    "name": "动态字体编排",
+    "en": "Kinetic Typography",
+    "category": "styles",
+    "kind": "style",
+    "description": "把文字的位移、缩放、旋转或形变编排成有节奏的动效，让文字本身成为视觉主体；展示完成后仍应留出稳定阅读时间。",
+    "useCases": [
+      "开场标题",
+      "章节转场",
+      "品牌动效"
+    ],
+    "tags": [
+      "Kinetic Type",
+      "Motion Typography",
+      "动态排版",
+      "文字动画"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://tympanus.net/codrops/2021/09/29/kinetic-typography-page-transition/",
+    "demo": "kinetic",
+    "related": [
+      "microinteractions",
+      "outline-typography"
+    ]
+  },
+  {
+    "id": "microinteractions",
+    "name": "微交互",
+    "en": "Microinteractions",
+    "category": "styles",
+    "kind": "style",
+    "description": "围绕一个动作或状态变化提供小范围反馈，例如收藏切换、提交进度与错误提示。反馈可以是颜色、文字或短动效，不必持续运动。",
+    "useCases": [
+      "按钮状态",
+      "表单反馈",
+      "收藏操作"
+    ],
+    "tags": [
+      "Micro Interaction",
+      "Micro-animation",
+      "微动效",
+      "交互反馈"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://www.nngroup.com/articles/microinteractions/",
+    "demo": "motion",
+    "related": [
+      "material-design",
+      "kinetic-typography"
+    ]
+  },
+  {
+    "id": "three-d-hero",
+    "name": "三维首屏",
+    "en": "3D Hero",
+    "category": "styles",
+    "kind": "style",
+    "description": "在首屏用三维物体或场景承担主要视觉，可提供旋转、灯光或指针响应。这是展示模式的称呼，可用 Three.js 等工具实现，需兼顾载入与替代内容。",
+    "useCases": [
+      "产品外观",
+      "技术展示",
+      "互动作品集"
+    ],
+    "tags": [
+      "3D Hero",
+      "WebGL Hero",
+      "Three.js",
+      "三维展示",
+      "3D首屏"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://tympanus.net/codrops/2026/08/12/creating-an-interactive-3d-cluster-with-three-js-tsl-and-three-start/",
+    "demo": "3d",
+    "related": [
+      "wireframe-aesthetic",
+      "generative-art"
+    ]
+  },
+  {
+    "id": "liquid-organic",
+    "name": "液态与有机形态",
+    "en": "Liquid / Organic Design",
+    "category": "styles",
+    "kind": "style",
+    "description": "用柔和曲线、不规则团块或波纹代替硬直边界；液态动效进一步让图像或形状产生流动、融合和扰动。它是多种效果的集合称呼。",
+    "useCases": [
+      "实验主视觉",
+      "图片转场",
+      "品牌装饰"
+    ],
+    "tags": [
+      "Liquid",
+      "Organic",
+      "Blob",
+      "Metaballs",
+      "液态",
+      "有机形态"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://tympanus.net/codrops/2019/10/08/creating-a-water-like-distortion-effect-with-three-js/",
+    "demo": "organic",
+    "related": [
+      "generative-art",
+      "aurora-gradient"
+    ]
+  },
+  {
+    "id": "wireframe-aesthetic",
+    "name": "线框视觉",
+    "en": "Wireframe Aesthetic",
+    "category": "styles",
+    "kind": "style",
+    "description": "用细线显露三维模型的边与网格结构，形成工程图或计算机图形的观感。这里指可见的三维线框，不是 UX 设计中的低保真页面原型。",
+    "useCases": [
+      "工程产品",
+      "三维演示",
+      "模型结构解析"
+    ],
+    "tags": [
+      "Wireframe",
+      "Wire Mesh",
+      "线框",
+      "三维线框",
+      "网格线"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://threejs.org/docs/pages/MeshBasicMaterial.html#wireframe",
+    "demo": "wire",
+    "related": [
+      "three-d-hero",
+      "ascii-art"
+    ]
+  },
+  {
+    "id": "terminal-ui",
+    "name": "终端风界面",
+    "en": "Terminal UI Aesthetic",
+    "category": "styles",
+    "kind": "style",
+    "description": "借用命令行的等宽字体、行式文本、提示符与光标形成界面观感。这是视觉称呼；真正可执行命令的网页终端还需要独立的终端组件与服务。",
+    "useCases": [
+      "开发者作品集",
+      "技术档案",
+      "代码展示"
+    ],
+    "tags": [
+      "Terminal",
+      "CLI Aesthetic",
+      "Console",
+      "终端风",
+      "命令行"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://xtermjs.org/",
+    "demo": "terminal",
+    "related": [
+      "brutalism",
+      "ascii-art"
+    ]
+  },
+  {
+    "id": "retro-futurism",
+    "name": "复古未来主义",
+    "en": "Retro-futurism",
+    "category": "styles",
+    "kind": "style",
+    "description": "用过去时代想象未来的视觉语言构图，例如复古科幻、电子网格、霓虹或旧式数字纹理。它是一类艺术取向，不限定某一种年代配色。",
+    "useCases": [
+      "音乐文化",
+      "科幻主题",
+      "创意活动"
+    ],
+    "tags": [
+      "Retro Future",
+      "Retrofuturism",
+      "Synthwave",
+      "复古未来",
+      "复古科幻"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://blog.adobe.com/en/publish/2020/01/01/top-three-visual-trends-of-2019-from-behance",
+    "demo": "retro",
+    "related": [
+      "grain-noise",
+      "terminal-ui"
+    ]
+  },
+  {
+    "id": "generative-art",
+    "name": "程序生成艺术",
+    "en": "Generative Art",
+    "category": "styles",
+    "kind": "style",
+    "description": "设定规则、参数与变化方式，让代码生成线条、粒子或几何图案；随机只是其中一种方法，重复与数学结构也能产生作品。",
+    "useCases": [
+      "互动背景",
+      "数字艺术",
+      "动态品牌纹理"
+    ],
+    "tags": [
+      "Creative Coding",
+      "Procedural Art",
+      "程序艺术",
+      "生成艺术",
+      "创意编码"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://p5js.org/tutorials/repeating-with-loops/",
+    "demo": "generative",
+    "related": [
+      "three-d-hero",
+      "liquid-organic"
+    ]
+  },
+  {
+    "id": "ascii-art",
+    "name": "字符艺术",
+    "en": "ASCII Art",
+    "category": "styles",
+    "kind": "style",
+    "description": "用字符的形状与疏密组成图像，也能把三维画面转换成动态字符画。它把字符作为图像材料，与模拟命令行操作的终端风界面侧重点不同。",
+    "useCases": [
+      "实验视觉",
+      "字符化三维",
+      "开发者品牌"
+    ],
+    "tags": [
+      "ASCII",
+      "Character Art",
+      "字符画",
+      "字符渲染"
+    ],
+    "level": "进阶",
+    "support": "视觉模式",
+    "doc": "https://threejs.org/examples/webgl_effects_ascii.html",
+    "demo": "terminal",
+    "related": [
+      "terminal-ui",
+      "wireframe-aesthetic"
+    ]
+  },
+  {
+    "id": "outline-typography",
+    "name": "描边字体视觉",
+    "en": "Outline Typography",
+    "category": "styles",
+    "kind": "style",
+    "description": "只显示字形轮廓或让填色与描边对比，用于标题与叠层文字。它是常用图形处理手法，不是完整设计体系；正文仍适合使用清晰的实心字形。",
+    "useCases": [
+      "标题设计",
+      "海报式首屏",
+      "文字叠层"
+    ],
+    "tags": [
+      "Outlined Type",
+      "Stroke Text",
+      "Hollow Text",
+      "空心字",
+      "描边文字"
+    ],
+    "level": "基础",
+    "support": "视觉模式",
+    "doc": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke",
+    "demo": "kinetic",
+    "related": [
+      "kinetic-typography",
+      "editorial-design"
+    ]
+  }
+]
