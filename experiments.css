@@ -1,0 +1,17 @@
+/* Scoped local numerical experiment controls. */
+.experiment-lab{box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr);gap:8px;width:100%;min-width:0;color:#e7dfd2;font:11px/1.55 "Segoe UI","Microsoft YaHei",sans-serif;container-type:inline-size}
+.experiment-lab *{box-sizing:border-box}.experiment-lab .experiment-view{position:relative;min-width:0;border:1px solid #a68a5c38;border-radius:8px;overflow:hidden;background:#09090f}
+.experiment-lab canvas{display:block;width:100%;height:145px;outline-offset:-3px;touch-action:manipulation}
+.experiment-lab .experiment-kind{position:absolute;left:8px;top:7px;font-size:8px;letter-spacing:.8px;background:#09090fc9;color:#b8a786;padding:2px 5px;border-radius:3px;pointer-events:none}
+.experiment-lab .experiment-metric{position:absolute;bottom:5px;left:8px;right:8px;font:9px/1.5 Consolas,"Microsoft YaHei",monospace;color:#ddbb85;text-shadow:0 1px 3px #000;background:#09090fbd;width:max-content;max-width:calc(100% - 16px);padding:2px 5px;border-radius:3px;overflow-wrap:anywhere;pointer-events:none}
+.experiment-lab .experiment-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.experiment-lab .experiment-controls label{display:block;min-width:0}.experiment-lab .experiment-controls label>span{display:flex;justify-content:space-between;gap:5px;font-size:9px;color:#bcb3a4}
+.experiment-lab .experiment-controls output{color:#dfb879;font:9px Consolas,monospace;white-space:nowrap}
+.experiment-lab input[type=range]{display:block;width:100%;height:12px;padding:0;margin:5px 0 0;accent-color:#c59558;cursor:pointer;background:transparent}
+.experiment-lab .experiment-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.experiment-lab button{font:inherit;color:#dfc499;background:#33261b;border:1px solid #a078493e;min-height:30px;border-radius:5px;padding:5px 8px;cursor:pointer;transition:background .2s,transform .2s,border-color .2s;overflow-wrap:anywhere}
+.experiment-lab button:hover{background:#493020;border-color:#c7965b}.experiment-lab button:active{transform:translateY(1px)}.experiment-lab button:focus-visible,.experiment-lab input:focus-visible,.experiment-lab canvas:focus-visible{outline:2px solid #e77c6d;outline-offset:2px}
+.experiment-lab .experiment-status{font-size:9px;line-height:1.55;color:#a99e8e;margin:0;min-height:28px;overflow-wrap:anywhere}
+@container(max-width:270px){.experiment-lab canvas{height:125px}.experiment-lab .experiment-controls{gap:7px}.experiment-lab .experiment-controls label>span{flex-wrap:wrap;font-size:9px;line-height:1.35}.experiment-lab .experiment-actions{gap:5px}.experiment-lab button{padding:5px;font-size:9px}.experiment-lab .experiment-metric{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.experiment-lab button{transition:none}}
+

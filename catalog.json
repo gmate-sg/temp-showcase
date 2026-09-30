@@ -1,2066 +1,1558 @@
-[
-  {
-    "id": "navigation-topbar",
-    "name": "顶部导航",
-    "en": "Top Navigation",
-    "category": "navigation",
-    "description": "品牌与横向主入口并列，选中栏目显示底线。",
-    "tags": [
-      "顶部导航",
-      "Top Navigation",
-      "topbar",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "topbar",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-sidebar",
-      "navigation-command"
-    ]
-  },
-  {
-    "id": "navigation-sidebar",
-    "name": "侧边导航",
-    "en": "Sidebar Navigation",
-    "category": "navigation",
-    "description": "纵向模块列表可折叠为图标栏，点击后切换内容。",
-    "tags": [
-      "侧边导航",
-      "Sidebar Navigation",
-      "sidebar",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "sidebar",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-mega",
-      "navigation-topbar"
-    ]
-  },
-  {
-    "id": "navigation-mega",
-    "name": "超级菜单",
-    "en": "Mega Menu",
-    "category": "navigation",
-    "description": "展开多列分组入口，用于展示较多栏目与层级。",
-    "tags": [
-      "超级菜单",
-      "Mega Menu",
-      "mega",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "mega",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-breadcrumbs",
-      "navigation-sidebar"
-    ]
-  },
-  {
-    "id": "navigation-breadcrumbs",
-    "name": "面包屑导航",
-    "en": "Breadcrumbs",
-    "category": "navigation",
-    "description": "展示当前位置的层级路径，点击任意上层回到该层。",
-    "tags": [
-      "面包屑导航",
-      "Breadcrumbs",
-      "breadcrumbs",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "breadcrumbs",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-tabs",
-      "navigation-mega"
-    ]
-  },
-  {
-    "id": "navigation-tabs",
-    "name": "标签页导航",
-    "en": "Tabs",
-    "category": "navigation",
-    "description": "互斥标签切换同一位置的内容，支持左右方向键。",
-    "tags": [
-      "标签页导航",
-      "Tabs",
-      "tabs",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "tabs",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-bottom",
-      "navigation-breadcrumbs"
-    ]
-  },
-  {
-    "id": "navigation-bottom",
-    "name": "底部导航",
-    "en": "Bottom Navigation",
-    "category": "navigation",
-    "description": "主要入口排列在底部，用图标与短标签切换栏目。",
-    "tags": [
-      "底部导航",
-      "Bottom Navigation",
-      "bottom",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "bottom",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-dock",
-      "navigation-tabs"
-    ]
-  },
-  {
-    "id": "navigation-dock",
-    "name": "浮动快捷栏",
-    "en": "Floating Dock",
-    "category": "navigation",
-    "description": "悬浮图标条突出当前入口，悬停提示名称。",
-    "tags": [
-      "浮动快捷栏",
-      "Floating Dock",
-      "dock",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "dock",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-command",
-      "navigation-bottom"
-    ]
-  },
-  {
-    "id": "navigation-command",
-    "name": "命令面板",
-    "en": "Command Palette",
-    "category": "navigation",
-    "description": "输入关键词过滤本地命令，再选择一个操作。",
-    "tags": [
-      "命令面板",
-      "Command Palette",
-      "command",
-      "navigation"
-    ],
-    "useCases": [
-      "网站入口",
-      "应用导航"
-    ],
-    "demo": "navigation",
-    "variant": "command",
-    "interaction": "点击入口或输入关键词，观察导航与内容变化。",
-    "related": [
-      "navigation-topbar",
-      "navigation-dock"
-    ]
-  },
-  {
-    "id": "layout-bento",
-    "name": "便当网格",
-    "en": "Bento Grid",
-    "category": "layout",
-    "description": "大小不同的模块共用规则间距，点击可以更换重点模块。",
-    "tags": [
-      "便当网格",
-      "Bento Grid",
-      "bento",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "bento",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-split",
-      "layout-master-detail"
-    ]
-  },
-  {
-    "id": "layout-split",
-    "name": "分屏布局",
-    "en": "Split Screen",
-    "category": "layout",
-    "description": "两个主要区域并列，拖动分隔比例调整两侧空间。",
-    "tags": [
-      "分屏布局",
-      "Split Screen",
-      "split",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "split",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-masonry",
-      "layout-bento"
-    ]
-  },
-  {
-    "id": "layout-masonry",
-    "name": "瀑布流布局",
-    "en": "Masonry Layout",
-    "category": "layout",
-    "description": "不同高度的卡片形成错落列，新增项目后重新排列。",
-    "tags": [
-      "瀑布流布局",
-      "Masonry Layout",
-      "masonry",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "masonry",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-grid",
-      "layout-split"
-    ]
-  },
-  {
-    "id": "layout-grid",
-    "name": "自适应卡片网格",
-    "en": "Responsive Card Grid",
-    "category": "layout",
-    "description": "卡片根据容器宽度改变列数，保持合理间距。",
-    "tags": [
-      "自适应卡片网格",
-      "Responsive Card Grid",
-      "grid",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "grid",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-sticky",
-      "layout-masonry"
-    ]
-  },
-  {
-    "id": "layout-sticky",
-    "name": "粘性目录布局",
-    "en": "Sticky Contents Layout",
-    "category": "layout",
-    "description": "正文滚动时目录保留在视区，点击目录定位章节。",
-    "tags": [
-      "粘性目录布局",
-      "Sticky Contents Layout",
-      "sticky",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "sticky",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-horizontal",
-      "layout-grid"
-    ]
-  },
-  {
-    "id": "layout-horizontal",
-    "name": "横向浏览布局",
-    "en": "Horizontal Scroll Layout",
-    "category": "layout",
-    "description": "面板沿水平方向延续，使用原生滚动与吸附停靠。",
-    "tags": [
-      "横向浏览布局",
-      "Horizontal Scroll Layout",
-      "horizontal",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "horizontal",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-stack",
-      "layout-sticky"
-    ]
-  },
-  {
-    "id": "layout-stack",
-    "name": "叠层卡片布局",
-    "en": "Stacked Cards",
-    "category": "layout",
-    "description": "卡片错位堆叠，点击下一张轮换前后层级。",
-    "tags": [
-      "叠层卡片布局",
-      "Stacked Cards",
-      "stack",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "stack",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-master-detail",
-      "layout-horizontal"
-    ]
-  },
-  {
-    "id": "layout-master-detail",
-    "name": "主从布局",
-    "en": "Master Detail",
-    "category": "layout",
-    "description": "列表选择与详情并列显示，选择项目同步更新详情。",
-    "tags": [
-      "主从布局",
-      "Master Detail",
-      "master-detail",
-      "layout"
-    ],
-    "useCases": [
-      "页面组织",
-      "内容展示"
-    ],
-    "demo": "layout",
-    "variant": "master-detail",
-    "interaction": "使用演示中的按钮、滚动区或滑块，观察布局变化。",
-    "related": [
-      "layout-bento",
-      "layout-stack"
-    ]
-  },
-  {
-    "id": "actions-primary",
-    "name": "主按钮",
-    "en": "Primary Button",
-    "category": "actions",
-    "description": "实心强调色用于主操作，点击后显示短时成功反馈。",
-    "tags": [
-      "主按钮",
-      "Primary Button",
-      "primary",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "primary",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-outline",
-      "actions-magnetic"
-    ]
-  },
-  {
-    "id": "actions-outline",
-    "name": "描边按钮",
-    "en": "Outline Button",
-    "category": "actions",
-    "description": "细边框表达次级动作，悬停填色并可切换选中。",
-    "tags": [
-      "描边按钮",
-      "Outline Button",
-      "outline",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "outline",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-icon",
-      "actions-primary"
-    ]
-  },
-  {
-    "id": "actions-icon",
-    "name": "图标按钮",
-    "en": "Icon Button",
-    "category": "actions",
-    "description": "紧凑图标表达收藏与分享，配合可访问名称。",
-    "tags": [
-      "图标按钮",
-      "Icon Button",
-      "icon",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "icon",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-split-button",
-      "actions-outline"
-    ]
-  },
-  {
-    "id": "actions-split-button",
-    "name": "分裂按钮",
-    "en": "Split Button",
-    "category": "actions",
-    "description": "主操作与选项箭头共享按钮组，先选择再执行。",
-    "tags": [
-      "分裂按钮",
-      "Split Button",
-      "split-button",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "split-button",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-toggle-button",
-      "actions-icon"
-    ]
-  },
-  {
-    "id": "actions-toggle-button",
-    "name": "切换按钮",
-    "en": "Toggle Button",
-    "category": "actions",
-    "description": "按钮保留按下状态，用于控制持续的格式或设置。",
-    "tags": [
-      "切换按钮",
-      "Toggle Button",
-      "toggle-button",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "toggle-button",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-segmented",
-      "actions-split-button"
-    ]
-  },
-  {
-    "id": "actions-segmented",
-    "name": "分段选择控件",
-    "en": "Segmented Control",
-    "category": "actions",
-    "description": "互斥选项排列在一条控件中，选中位置与内容同步。",
-    "tags": [
-      "分段选择控件",
-      "Segmented Control",
-      "segmented",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "segmented",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-fab",
-      "actions-toggle-button"
-    ]
-  },
-  {
-    "id": "actions-fab",
-    "name": "浮动操作按钮",
-    "en": "Floating Action Button",
-    "category": "actions",
-    "description": "独立的加号按钮展开少量快捷动作。",
-    "tags": [
-      "浮动操作按钮",
-      "Floating Action Button",
-      "fab",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "fab",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-magnetic",
-      "actions-segmented"
-    ]
-  },
-  {
-    "id": "actions-magnetic",
-    "name": "磁性悬停按钮",
-    "en": "Magnetic Button",
-    "category": "actions",
-    "description": "按钮视觉轻微追随指针，移出后回到中心。",
-    "tags": [
-      "磁性悬停按钮",
-      "Magnetic Button",
-      "magnetic",
-      "actions"
-    ],
-    "useCases": [
-      "主要操作",
-      "快捷工具"
-    ],
-    "demo": "actions",
-    "variant": "magnetic",
-    "interaction": "悬停并点击控件，观察操作与状态反馈。",
-    "related": [
-      "actions-primary",
-      "actions-fab"
-    ]
-  },
-  {
-    "id": "forms-floating",
-    "name": "浮动标签输入框",
-    "en": "Floating Label Input",
-    "category": "forms",
-    "description": "聚焦或填入内容时标签上移，避免遮挡输入值。",
-    "tags": [
-      "浮动标签输入框",
-      "Floating Label Input",
-      "floating",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "floating",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-search",
-      "forms-validation"
-    ]
-  },
-  {
-    "id": "forms-search",
-    "name": "即时搜索框",
-    "en": "Live Search Field",
-    "category": "forms",
-    "description": "输入后即时过滤本地项目，选择结果生成摘要。",
-    "tags": [
-      "即时搜索框",
-      "Live Search Field",
-      "search",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "search",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-checkbox",
-      "forms-floating"
-    ]
-  },
-  {
-    "id": "forms-checkbox",
-    "name": "复选框列表",
-    "en": "Checkbox Group",
-    "category": "forms",
-    "description": "多个选项可分别勾选，当前结果用文字汇总。",
-    "tags": [
-      "复选框列表",
-      "Checkbox Group",
-      "checkbox",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "checkbox",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-radio-cards",
-      "forms-search"
-    ]
-  },
-  {
-    "id": "forms-radio-cards",
-    "name": "单选卡片",
-    "en": "Radio Cards",
-    "category": "forms",
-    "description": "整个卡片作为单选区域，包含名称与简短说明。",
-    "tags": [
-      "单选卡片",
-      "Radio Cards",
-      "radio-cards",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "radio-cards",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-switch",
-      "forms-checkbox"
-    ]
-  },
-  {
-    "id": "forms-switch",
-    "name": "开关控件",
-    "en": "Toggle Switch",
-    "category": "forms",
-    "description": "两态设置即时生效，文字与视觉同步表达状态。",
-    "tags": [
-      "开关控件",
-      "Toggle Switch",
-      "switch",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "switch",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-combobox",
-      "forms-radio-cards"
-    ]
-  },
-  {
-    "id": "forms-combobox",
-    "name": "可搜索选择器",
-    "en": "Searchable Combobox",
-    "category": "forms",
-    "description": "把文字过滤与有限选项组合，适合较长选择列表。",
-    "tags": [
-      "可搜索选择器",
-      "Searchable Combobox",
-      "combobox",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "combobox",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-stepper",
-      "forms-switch"
-    ]
-  },
-  {
-    "id": "forms-stepper",
-    "name": "数字步进器",
-    "en": "Number Stepper",
-    "category": "forms",
-    "description": "加减按钮与数字输入控制有范围的数量。",
-    "tags": [
-      "数字步进器",
-      "Number Stepper",
-      "stepper",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "stepper",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-validation",
-      "forms-combobox"
-    ]
-  },
-  {
-    "id": "forms-validation",
-    "name": "即时校验表单",
-    "en": "Inline Validation Form",
-    "category": "forms",
-    "description": "提交本地演示时校验邮箱，用文字指出结果。",
-    "tags": [
-      "即时校验表单",
-      "Inline Validation Form",
-      "validation",
-      "forms"
-    ],
-    "useCases": [
-      "信息输入",
-      "偏好设置"
-    ],
-    "demo": "forms",
-    "variant": "validation",
-    "interaction": "填写或选择本地演示字段，观察值与状态变化。",
-    "related": [
-      "forms-floating",
-      "forms-stepper"
-    ]
-  },
-  {
-    "id": "content-product",
-    "name": "商品卡片",
-    "en": "Product Card",
-    "category": "content",
-    "description": "主视觉、名称、价格与操作形成一个浏览单元。",
-    "tags": [
-      "商品卡片",
-      "Product Card",
-      "product",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "product",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-profile",
-      "content-table"
-    ]
-  },
-  {
-    "id": "content-profile",
-    "name": "个人资料卡片",
-    "en": "Profile Card",
-    "category": "content",
-    "description": "身份介绍与关注按钮集中呈现，可展开更多资料。",
-    "tags": [
-      "个人资料卡片",
-      "Profile Card",
-      "profile",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "profile",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-stats",
-      "content-product"
-    ]
-  },
-  {
-    "id": "content-stats",
-    "name": "统计指标卡片",
-    "en": "Stats Card",
-    "category": "content",
-    "description": "主数值与短趋势图组合，周期切换后更新数据。",
-    "tags": [
-      "统计指标卡片",
-      "Stats Card",
-      "stats",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "stats",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-pricing",
-      "content-profile"
-    ]
-  },
-  {
-    "id": "content-pricing",
-    "name": "价格套餐卡片",
-    "en": "Pricing Card",
-    "category": "content",
-    "description": "并列比较套餐与能力，可切换计费周期与方案。",
-    "tags": [
-      "价格套餐卡片",
-      "Pricing Card",
-      "pricing",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "pricing",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-accordion",
-      "content-stats"
-    ]
-  },
-  {
-    "id": "content-accordion",
-    "name": "折叠内容",
-    "en": "Accordion",
-    "category": "content",
-    "description": "点击标题展开对应内容，展开状态清晰可见。",
-    "tags": [
-      "折叠内容",
-      "Accordion",
-      "accordion",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "accordion",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-tree",
-      "content-pricing"
-    ]
-  },
-  {
-    "id": "content-tree",
-    "name": "树形列表",
-    "en": "Tree View",
-    "category": "content",
-    "description": "缩进与展开控件表达父子关系，逐层选择项目。",
-    "tags": [
-      "树形列表",
-      "Tree View",
-      "tree",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "tree",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-timeline",
-      "content-accordion"
-    ]
-  },
-  {
-    "id": "content-timeline",
-    "name": "时间线",
-    "en": "Timeline",
-    "category": "content",
-    "description": "连接线与节点按时间排列，点击事件显示详情。",
-    "tags": [
-      "时间线",
-      "Timeline",
-      "timeline",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "timeline",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-table",
-      "content-tree"
-    ]
-  },
-  {
-    "id": "content-table",
-    "name": "可排序数据表",
-    "en": "Sortable Table",
-    "category": "content",
-    "description": "点击列标题改变排序，复选框用于批量选择。",
-    "tags": [
-      "可排序数据表",
-      "Sortable Table",
-      "table",
-      "content"
-    ],
-    "useCases": [
-      "信息浏览",
-      "内容管理"
-    ],
-    "demo": "content",
-    "variant": "table",
-    "interaction": "点击卡片中的操作，观察内容与状态变化。",
-    "related": [
-      "content-product",
-      "content-timeline"
-    ]
-  },
-  {
-    "id": "feedback-toast",
-    "name": "轻提示",
-    "en": "Toast Notification",
-    "category": "feedback",
-    "description": "非阻塞消息短时出现，用于确认动作完成。",
-    "tags": [
-      "轻提示",
-      "Toast Notification",
-      "toast",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "toast",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-banner",
-      "feedback-loading-button"
-    ]
-  },
-  {
-    "id": "feedback-banner",
-    "name": "信息横幅",
-    "en": "Notification Banner",
-    "category": "feedback",
-    "description": "持续显示重要消息，可切换级别并关闭恢复。",
-    "tags": [
-      "信息横幅",
-      "Notification Banner",
-      "banner",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "banner",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-progress",
-      "feedback-toast"
-    ]
-  },
-  {
-    "id": "feedback-progress",
-    "name": "进度条",
-    "en": "Progress Bar",
-    "category": "feedback",
-    "description": "条形长度与百分比显示本地模拟任务的进度。",
-    "tags": [
-      "进度条",
-      "Progress Bar",
-      "progress",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "progress",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-steps",
-      "feedback-banner"
-    ]
-  },
-  {
-    "id": "feedback-steps",
-    "name": "步骤进度",
-    "en": "Step Indicator",
-    "category": "feedback",
-    "description": "节点展示流程的位置与已经完成的阶段。",
-    "tags": [
-      "步骤进度",
-      "Step Indicator",
-      "steps",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "steps",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-skeleton",
-      "feedback-progress"
-    ]
-  },
-  {
-    "id": "feedback-skeleton",
-    "name": "骨架加载",
-    "en": "Skeleton Loading",
-    "category": "feedback",
-    "description": "内容到达前用匹配布局的占位形状表达载入。",
-    "tags": [
-      "骨架加载",
-      "Skeleton Loading",
-      "skeleton",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "skeleton",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-badge",
-      "feedback-steps"
-    ]
-  },
-  {
-    "id": "feedback-badge",
-    "name": "状态标签",
-    "en": "Status Badge",
-    "category": "feedback",
-    "description": "紧凑文字与标记表达对象状态，颜色作为辅助。",
-    "tags": [
-      "状态标签",
-      "Status Badge",
-      "badge",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "badge",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-empty",
-      "feedback-skeleton"
-    ]
-  },
-  {
-    "id": "feedback-empty",
-    "name": "空状态",
-    "en": "Empty State",
-    "category": "feedback",
-    "description": "解释当前没有项目，并提供创建内容的入口。",
-    "tags": [
-      "空状态",
-      "Empty State",
-      "empty",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "empty",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-loading-button",
-      "feedback-badge"
-    ]
-  },
-  {
-    "id": "feedback-loading-button",
-    "name": "加载按钮",
-    "en": "Loading Button",
-    "category": "feedback",
-    "description": "执行期间显示加载状态并避免重复触发。",
-    "tags": [
-      "加载按钮",
-      "Loading Button",
-      "loading-button",
-      "feedback"
-    ],
-    "useCases": [
-      "动作反馈",
-      "任务状态"
-    ],
-    "demo": "feedback",
-    "variant": "loading-button",
-    "interaction": "点击触发按钮，观察消息、进度与内容变化。",
-    "related": [
-      "feedback-toast",
-      "feedback-empty"
-    ]
-  },
-  {
-    "id": "overlays-modal",
-    "name": "模态对话框",
-    "en": "Modal Dialog",
-    "category": "overlays",
-    "description": "居中窗口承载短任务，打开时背景暂停交互。",
-    "tags": [
-      "模态对话框",
-      "Modal Dialog",
-      "modal",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "modal",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-drawer",
-      "overlays-sheet"
-    ]
-  },
-  {
-    "id": "overlays-drawer",
-    "name": "侧边抽屉",
-    "en": "Side Drawer",
-    "category": "overlays",
-    "description": "从侧边滑入附加内容，关闭后保留选择摘要。",
-    "tags": [
-      "侧边抽屉",
-      "Side Drawer",
-      "drawer",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "drawer",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-popover",
-      "overlays-modal"
-    ]
-  },
-  {
-    "id": "overlays-popover",
-    "name": "浮动卡片",
-    "en": "Popover",
-    "category": "overlays",
-    "description": "锚点附近展开小面板，就地调整少量设置。",
-    "tags": [
-      "浮动卡片",
-      "Popover",
-      "popover",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "popover",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-tooltip",
-      "overlays-drawer"
-    ]
-  },
-  {
-    "id": "overlays-tooltip",
-    "name": "悬停提示",
-    "en": "Tooltip",
-    "category": "overlays",
-    "description": "悬停或键盘聚焦时显示简短的操作说明。",
-    "tags": [
-      "悬停提示",
-      "Tooltip",
-      "tooltip",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "tooltip",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-dropdown",
-      "overlays-popover"
-    ]
-  },
-  {
-    "id": "overlays-dropdown",
-    "name": "下拉菜单",
-    "en": "Dropdown Menu",
-    "category": "overlays",
-    "description": "按钮下方展开动作列表，选择后收起。",
-    "tags": [
-      "下拉菜单",
-      "Dropdown Menu",
-      "dropdown",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "dropdown",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-context",
-      "overlays-tooltip"
-    ]
-  },
-  {
-    "id": "overlays-context",
-    "name": "上下文菜单",
-    "en": "Context Menu",
-    "category": "overlays",
-    "description": "右键对象或点击可见按钮，打开相关操作列表。",
-    "tags": [
-      "上下文菜单",
-      "Context Menu",
-      "context",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "context",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-confirm",
-      "overlays-dropdown"
-    ]
-  },
-  {
-    "id": "overlays-confirm",
-    "name": "危险操作确认框",
-    "en": "Confirmation Dialog",
-    "category": "overlays",
-    "description": "用明确的操作文案确认删除，可取消保留演示内容。",
-    "tags": [
-      "危险操作确认框",
-      "Confirmation Dialog",
-      "confirm",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "confirm",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-sheet",
-      "overlays-context"
-    ]
-  },
-  {
-    "id": "overlays-sheet",
-    "name": "底部操作面板",
-    "en": "Bottom Sheet",
-    "category": "overlays",
-    "description": "从下缘升起快捷选择面板，选择后显示结果。",
-    "tags": [
-      "底部操作面板",
-      "Bottom Sheet",
-      "sheet",
-      "overlays"
-    ],
-    "useCases": [
-      "附加操作",
-      "局部信息"
-    ],
-    "demo": "overlays",
-    "variant": "sheet",
-    "interaction": "打开演示面板并操作，按 Escape 或关闭按钮结束。",
-    "related": [
-      "overlays-modal",
-      "overlays-confirm"
-    ]
-  },
-  {
-    "id": "media-carousel",
-    "name": "图片轮播",
-    "en": "Image Carousel",
-    "category": "media",
-    "description": "一张主画面配合箭头与位置点逐项展示同组内容。",
-    "tags": [
-      "图片轮播",
-      "Image Carousel",
-      "carousel",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "carousel",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-gallery",
-      "media-thumbnails"
-    ]
-  },
-  {
-    "id": "media-gallery",
-    "name": "网格画廊与灯箱",
-    "en": "Gallery & Lightbox",
-    "category": "media",
-    "description": "缩略图形成网格，点击在上层扩大查看画面。",
-    "tags": [
-      "网格画廊与灯箱",
-      "Gallery & Lightbox",
-      "gallery",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "gallery",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-compare",
-      "media-carousel"
-    ]
-  },
-  {
-    "id": "media-compare",
-    "name": "前后对比滑块",
-    "en": "Before / After Slider",
-    "category": "media",
-    "description": "两个视觉叠合在同一区域，滑块调整对比边界。",
-    "tags": [
-      "前后对比滑块",
-      "Before / After Slider",
-      "compare",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "compare",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-zoom",
-      "media-gallery"
-    ]
-  },
-  {
-    "id": "media-zoom",
-    "name": "悬停放大视图",
-    "en": "Hover Zoom",
-    "category": "media",
-    "description": "视觉根据指针定位放大，也提供可点击的放大入口。",
-    "tags": [
-      "悬停放大视图",
-      "Hover Zoom",
-      "zoom",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "zoom",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-hotspots",
-      "media-compare"
-    ]
-  },
-  {
-    "id": "media-hotspots",
-    "name": "图片热点",
-    "en": "Image Hotspots",
-    "category": "media",
-    "description": "视觉上的标记对应说明，点击显示指定细节。",
-    "tags": [
-      "图片热点",
-      "Image Hotspots",
-      "hotspots",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "hotspots",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-video-controls",
-      "media-zoom"
-    ]
-  },
-  {
-    "id": "media-video-controls",
-    "name": "视频控制条",
-    "en": "Video Controls UI",
-    "category": "media",
-    "description": "以本地模拟时钟演示播放、时间轴与静音，不加载真实视频。",
-    "tags": [
-      "视频控制条",
-      "Video Controls UI",
-      "video-controls",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "video-controls",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-flip",
-      "media-hotspots"
-    ]
-  },
-  {
-    "id": "media-flip",
-    "name": "翻转媒体卡",
-    "en": "Flip Card",
-    "category": "media",
-    "description": "正面展示视觉，背面展示说明，点击翻转切换两面。",
-    "tags": [
-      "翻转媒体卡",
-      "Flip Card",
-      "flip",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "flip",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-thumbnails",
-      "media-video-controls"
-    ]
-  },
-  {
-    "id": "media-thumbnails",
-    "name": "缩略图导航",
-    "en": "Thumbnail Navigation",
-    "category": "media",
-    "description": "一排小预览控制主画面，选中边框与主画面同步。",
-    "tags": [
-      "缩略图导航",
-      "Thumbnail Navigation",
-      "thumbnails",
-      "media"
-    ],
-    "useCases": [
-      "产品展示",
-      "作品图库"
-    ],
-    "demo": "media",
-    "variant": "thumbnails",
-    "interaction": "使用图片区域与控制按钮，观察主视觉变化。",
-    "related": [
-      "media-carousel",
-      "media-flip"
-    ]
-  },
-  {
-    "id": "motion-reveal",
-    "name": "滚动入场",
-    "en": "Scroll Reveal",
-    "category": "motion",
-    "description": "项目进入局部滚动视区后显现，形成按阅读顺序的动效。",
-    "tags": [
-      "滚动入场",
-      "Scroll Reveal",
-      "reveal",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "reveal",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-parallax",
-      "motion-trail"
-    ]
-  },
-  {
-    "id": "motion-parallax",
-    "name": "分层视差",
-    "en": "Layered Parallax",
-    "category": "motion",
-    "description": "前景与背景按不同幅度位移，呈现层次感。",
-    "tags": [
-      "分层视差",
-      "Layered Parallax",
-      "parallax",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "parallax",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-tilt",
-      "motion-reveal"
-    ]
-  },
-  {
-    "id": "motion-tilt",
-    "name": "三维倾斜卡",
-    "en": "3D Tilt Card",
-    "category": "motion",
-    "description": "卡片随指针在 CSS 三维空间倾斜，按钮提供键盘替代。",
-    "tags": [
-      "三维倾斜卡",
-      "3D Tilt Card",
-      "tilt",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "tilt",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-marquee",
-      "motion-parallax"
-    ]
-  },
-  {
-    "id": "motion-marquee",
-    "name": "无缝滚动条",
-    "en": "Infinite Marquee",
-    "category": "motion",
-    "description": "重复内容持续平移，可改变方向与速度。",
-    "tags": [
-      "无缝滚动条",
-      "Infinite Marquee",
-      "marquee",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "marquee",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-spring",
-      "motion-tilt"
-    ]
-  },
-  {
-    "id": "motion-spring",
-    "name": "弹簧拖拽",
-    "en": "Spring Drag",
-    "category": "motion",
-    "description": "拖动圆点跟随指针，松开后带阻尼地回到中心。",
-    "tags": [
-      "弹簧拖拽",
-      "Spring Drag",
-      "spring",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "spring",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-stagger",
-      "motion-marquee"
-    ]
-  },
-  {
-    "id": "motion-stagger",
-    "name": "交错入场",
-    "en": "Staggered Entrance",
-    "category": "motion",
-    "description": "各个项目错开开始时间，可切换入场次序。",
-    "tags": [
-      "交错入场",
-      "Staggered Entrance",
-      "stagger",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "stagger",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-morph",
-      "motion-spring"
-    ]
-  },
-  {
-    "id": "motion-morph",
-    "name": "形态过渡",
-    "en": "Shape Morphing",
-    "category": "motion",
-    "description": "在不同圆角与轮廓之间连续变化，表达选项切换。",
-    "tags": [
-      "形态过渡",
-      "Shape Morphing",
-      "morph",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "morph",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-trail",
-      "motion-stagger"
-    ]
-  },
-  {
-    "id": "motion-trail",
-    "name": "指针轨迹",
-    "en": "Pointer Trail",
-    "category": "motion",
-    "description": "指针经过的位置留下短暂粒子，随后逐渐消失。",
-    "tags": [
-      "指针轨迹",
-      "Pointer Trail",
-      "trail",
-      "motion"
-    ],
-    "useCases": [
-      "交互反馈",
-      "创意展示"
-    ],
-    "demo": "motion",
-    "variant": "trail",
-    "interaction": "移动指针、拖动或点击按钮，体验当前动效。",
-    "related": [
-      "motion-reveal",
-      "motion-morph"
-    ]
-  },
-  {
-    "id": "three-orbit",
-    "name": "三维视角展示",
-    "en": "3D Orbit Showcase",
-    "category": "three",
-    "description": "真实 Three.js 场景中的发光形态，可拖动旋转视角。",
-    "tags": [
-      "三维视角展示",
-      "3D Orbit Showcase",
-      "orbit",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "orbit",
-    "interaction": "拖动真实三维场景旋转视角，滚轮调整距离；更多效果可进入实验室。",
-    "related": [
-      "three-particles",
-      "three-camera"
-    ]
-  },
-  {
-    "id": "three-particles",
-    "name": "粒子空间",
-    "en": "Particle Space",
-    "category": "three",
-    "description": "发光粒子组成持续运动的空间结构，可从不同角度查看。",
-    "tags": [
-      "粒子空间",
-      "Particle Space",
-      "particles",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "particles",
-    "interaction": "拖动真实三维场景旋转视角，滚轮调整距离；更多效果可进入实验室。",
-    "related": [
-      "three-fluid",
-      "three-orbit"
-    ]
-  },
-  {
-    "id": "three-fluid",
-    "name": "流体极光场",
-    "en": "Fluid Aurora Field",
-    "category": "three",
-    "description": "流动色带在空间中交叠，明暗与颜色持续变化。",
-    "tags": [
-      "流体极光场",
-      "Fluid Aurora Field",
-      "fluid",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "fluid",
-    "interaction": "拖动真实三维场景旋转视角，滚轮调整距离；更多效果可进入实验室。",
-    "related": [
-      "three-instances",
-      "three-particles"
-    ]
-  },
-  {
-    "id": "three-instances",
-    "name": "空间阵列",
-    "en": "Spatial Array",
-    "category": "three",
-    "description": "重复空间形态形成节奏与深度，可改变观察角度。",
-    "tags": [
-      "空间阵列",
-      "Spatial Array",
-      "instances",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "instances",
-    "interaction": "拖动真实三维场景旋转视角，滚轮调整距离；更多效果可进入实验室。",
-    "related": [
-      "three-picking",
-      "three-fluid"
-    ]
-  },
-  {
-    "id": "three-picking",
-    "name": "指针响应场景",
-    "en": "Pointer-responsive Scene",
-    "category": "three",
-    "description": "拖动操作与三维视角变化关联，产生即时空间反馈。",
-    "tags": [
-      "指针响应场景",
-      "Pointer-responsive Scene",
-      "picking",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "picking",
-    "interaction": "拖动旋转、滚轮缩放或键盘操作；点击画面拾取高亮物体；双击复位。",
-    "related": [
-      "three-morph",
-      "three-instances"
-    ]
-  },
-  {
-    "id": "three-morph",
-    "name": "动态形变视觉",
-    "en": "Animated Geometry",
-    "category": "three",
-    "description": "三维结构持续改变外观，展示形态与运动的关系。",
-    "tags": [
-      "动态形变视觉",
-      "Animated Geometry",
-      "morph",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "morph",
-    "interaction": "拖动旋转、滚轮缩放或键盘操作；点击画面改变带状曲面形态；双击复位。",
-    "related": [
-      "three-bloom",
-      "three-picking"
-    ]
-  },
-  {
-    "id": "three-bloom",
-    "name": "辉光三维视觉",
-    "en": "Bloomed 3D Visual",
-    "category": "three",
-    "description": "明亮形态周围扩散光晕，表达发光视觉的空间层次。",
-    "tags": [
-      "辉光三维视觉",
-      "Bloomed 3D Visual",
-      "bloom",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "bloom",
-    "interaction": "拖动旋转、滚轮缩放或键盘操作；点击画面改变辉光强度；双击复位。",
-    "related": [
-      "three-camera",
-      "three-morph"
-    ]
-  },
-  {
-    "id": "three-camera",
-    "name": "沉浸式空间浏览",
-    "en": "Immersive Spatial View",
-    "category": "three",
-    "description": "用可交互相机观察动态场景，体会距离与角度变化。",
-    "tags": [
-      "沉浸式空间浏览",
-      "Immersive Spatial View",
-      "camera",
-      "three"
-    ],
-    "useCases": [
-      "三维展示",
-      "互动首屏"
-    ],
-    "demo": "three",
-    "variant": "camera",
-    "interaction": "拖动真实三维场景旋转视角，滚轮调整距离；更多效果可进入实验室。",
-    "related": [
-      "three-orbit",
-      "three-bloom"
-    ]
-  },
-  {
-    "id": "layout-hero",
-    "name": "Hero 首屏",
-    "en": "Hero Section",
-    "category": "layout",
-    "description": "页面开头的重点介绍区域，用清晰标题、简短说明和主行动按钮建立第一印象。切换内容主题可看到文字与视觉一起变化。",
-    "tags": [
-      "Hero 首屏",
-      "Hero Section",
-      "hero",
-      "layout"
-    ],
-    "useCases": [
-      "网站首页",
-      "品牌介绍"
-    ],
-    "demo": "layout",
-    "variant": "hero",
-    "interaction": "点击主题切换首屏标题和视觉；点击主按钮获得本地反馈。",
-    "related": [
-      "layout-grid",
-      "layout-split"
-    ]
-  },
-  {
-    "id": "layout-footer",
-    "name": "页脚",
-    "en": "Footer",
-    "category": "layout",
-    "description": "页面底部的补充导航和品牌信息区域。窄屏通常把多列链接收成可展开分组，保留版权与联系入口。",
-    "tags": [
-      "页脚",
-      "Footer",
-      "footer",
-      "layout"
-    ],
-    "useCases": [
-      "网站底部",
-      "资源导航"
-    ],
-    "demo": "layout",
-    "variant": "footer",
-    "interaction": "展开页脚导航分组，点击入口查看本地反馈，并切换两种底色。",
-    "related": [
-      "layout-grid",
-      "layout-split"
-    ]
-  },
-  {
-    "id": "layout-cta",
-    "name": "行动号召模块",
-    "en": "Call to Action Section",
-    "category": "layout",
-    "description": "围绕一个明确目标组织短标题、利益说明与醒目按钮；常出现在首页中段或页面结尾，引导用户完成下一步。",
-    "tags": [
-      "行动号召模块",
-      "Call to Action Section",
-      "cta",
-      "layout"
-    ],
-    "useCases": [
-      "注册邀请",
-      "咨询入口"
-    ],
-    "demo": "layout",
-    "variant": "cta",
-    "interaction": "点击行动按钮，查看按钮状态和提示文字的即时变化。",
-    "related": [
-      "layout-grid",
-      "layout-split"
-    ]
-  },
-  {
-    "id": "layout-features",
-    "name": "功能介绍模块",
-    "en": "Feature Section",
-    "category": "layout",
-    "description": "用图示、标题和说明解释产品能力。标签式功能介绍把多个功能放在同一区域，切换时更新配图与说明。",
-    "tags": [
-      "功能介绍模块",
-      "Feature Section",
-      "features",
-      "layout"
-    ],
-    "useCases": [
-      "产品首页",
-      "服务能力"
-    ],
-    "demo": "layout",
-    "variant": "features",
-    "interaction": "切换三个功能标签，展开能力说明，查看对应的内容与视觉。",
-    "related": [
-      "layout-grid",
-      "layout-split"
-    ]
-  },
-  {
-    "id": "content-testimonials",
-    "name": "用户评价模块",
-    "en": "Testimonials",
-    "category": "content",
-    "description": "把示例引语、署名与身份组成独立内容块，便于展示体验反馈。轮播式评价一次聚焦一段文字，再切换下一条。",
-    "tags": [
-      "用户评价模块",
-      "Testimonials",
-      "testimonials",
-      "content"
-    ],
-    "useCases": [
-      "服务介绍",
-      "产品介绍"
-    ],
-    "demo": "content",
-    "variant": "testimonials",
-    "interaction": "点击上一条或下一条，切换三条明确标注的示例评价。",
-    "related": [
-      "content-product",
-      "content-accordion"
-    ]
-  },
-  {
-    "id": "content-pagination",
-    "name": "分页",
-    "en": "Pagination",
-    "category": "content",
-    "description": "把较长的内容列表拆成有编号的页面，显示当前位置并提供前后页入口。适合需要定位和返回的列表。",
-    "tags": [
-      "分页",
-      "Pagination",
-      "pagination",
-      "content"
-    ],
-    "useCases": [
-      "文章目录",
-      "商品列表"
-    ],
-    "demo": "content",
-    "variant": "pagination",
-    "interaction": "点击页码或前后页，更新列表内容和当前页状态。",
-    "related": [
-      "content-product",
-      "content-accordion"
-    ]
-  }
-]
+{
+  "version": 3,
+  "updated": "2026-10-01",
+  "galaxies": [
+    {
+      "id": "ai",
+      "name": "智能星系",
+      "en": "Artificial Intelligence",
+      "description": "从注意力到工具回路，理解智能系统的表示与决策。",
+      "theme": "ai",
+      "color": "#ad93e7",
+      "sectors": [
+        {
+          "id": "ai-representation",
+          "name": "表示与对齐",
+          "en": "Representation",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "ai-attention",
+              "name": "注意力棱镜",
+              "en": "Attention Prism",
+              "description": "选中词元，观察点积与 softmax 如何分配权重。这里使用人工设定的小向量，计算在浏览器完成，不运行语言模型。",
+              "kind": "simulation",
+              "experiment": "ai-attention",
+              "model": "ai",
+              "variant": 0,
+              "tags": [
+                "注意力棱镜",
+                "Attention Prism"
+              ],
+              "source": {
+                "title": "Attention Is All You Need",
+                "url": "https://arxiv.org/abs/1706.03762"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "查询词元",
+                  "min": 0,
+                  "max": 5,
+                  "step": 1,
+                  "value": 2,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "温度",
+                  "min": 0.2,
+                  "max": 2,
+                  "step": 0.1,
+                  "value": 0.7,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "ai-embedding",
+                "ai-agents"
+              ]
+            },
+            {
+              "id": "ai-embedding",
+              "name": "向量引力场",
+              "en": "Embedding Field",
+              "description": "移动查询点，按余弦相似度检索人工设定的向量。用于解释向量检索，不生成真实语义嵌入。",
+              "kind": "simulation",
+              "experiment": "ai-embedding",
+              "model": "ai",
+              "variant": 1,
+              "tags": [
+                "向量引力场",
+                "Embedding Field"
+              ],
+              "source": {
+                "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+                "url": "https://arxiv.org/abs/1908.10084"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "查询角度",
+                  "min": 0,
+                  "max": 360,
+                  "step": 1,
+                  "value": 40,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "检索数量",
+                  "min": 1,
+                  "max": 5,
+                  "step": 1,
+                  "value": 3,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "ai-attention",
+                "ai-agents"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ai-agency",
+          "name": "推理与协作",
+          "en": "Agency",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "ai-agents",
+              "name": "智能体回路",
+              "en": "Agent Loop",
+              "description": "按观察、计划、工具、检查逐步执行本地算术任务。工具是浏览器中的确定性函数，不连接模型或外部服务。",
+              "kind": "simulation",
+              "experiment": "ai-agents",
+              "model": "ai",
+              "variant": 2,
+              "tags": [
+                "智能体回路",
+                "Agent Loop"
+              ],
+              "source": {
+                "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+                "url": "https://arxiv.org/abs/2210.03629"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "目标数值",
+                  "min": 10,
+                  "max": 80,
+                  "step": 1,
+                  "value": 42,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "初始数值",
+                  "min": 1,
+                  "max": 9,
+                  "step": 1,
+                  "value": 3,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "ai-attention",
+                "ai-embedding"
+              ]
+            },
+            {
+              "id": "ai-multimodal",
+              "name": "跨模态对齐",
+              "en": "Multimodal Alignment",
+              "description": "改变两组人工向量的夹角，计算图像与文字候选的相似度矩阵。展示对齐思路，不运行 CLIP 推理。",
+              "kind": "simulation",
+              "experiment": "ai-multimodal",
+              "model": "ai",
+              "variant": 3,
+              "tags": [
+                "跨模态对齐",
+                "Multimodal Alignment"
+              ],
+              "source": {
+                "title": "Learning Transferable Visual Models From Natural Language Supervision",
+                "url": "https://arxiv.org/abs/2103.00020"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "对齐旋转",
+                  "min": 0,
+                  "max": 180,
+                  "step": 1,
+                  "value": 20,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "相似度温度",
+                  "min": 0.1,
+                  "max": 2,
+                  "step": 0.1,
+                  "value": 0.5,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "ai-attention",
+                "ai-embedding"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "name": "世界星系",
+      "en": "World Models & Robotics",
+      "description": "从栅格世界到机械臂，探索预测、行动与感知。",
+      "theme": "world",
+      "color": "#d2a766",
+      "sectors": [
+        {
+          "id": "world-dynamics",
+          "name": "推演与规划",
+          "en": "Dynamics",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "world-rollout",
+              "name": "世界推演",
+              "en": "World Rollout",
+              "description": "在可编辑栅格中推进移动规则并查看多步预测。参考世界模型研究，但这里是确定性状态转移示例，不运行 Genie。",
+              "kind": "research",
+              "experiment": "world-rollout",
+              "model": "world",
+              "variant": 0,
+              "tags": [
+                "世界推演",
+                "World Rollout"
+              ],
+              "source": {
+                "title": "Genie 3 — Google DeepMind",
+                "url": "https://deepmind.google/models/genie/"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "预测步数",
+                  "min": 1,
+                  "max": 12,
+                  "step": 1,
+                  "value": 6,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "移动方向",
+                  "min": 0,
+                  "max": 3,
+                  "step": 1,
+                  "value": 0,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "world-pathfinding",
+                "world-ik"
+              ]
+            },
+            {
+              "id": "world-pathfinding",
+              "name": "路径织网",
+              "en": "Path Weaver",
+              "description": "在网格点击放置障碍，运行 A* 寻路并比较最短路径。路径和已探索节点在浏览器实时计算。",
+              "kind": "runtime",
+              "experiment": "world-pathfinding",
+              "model": "world",
+              "variant": 1,
+              "tags": [
+                "路径织网",
+                "Path Weaver"
+              ],
+              "source": {
+                "title": "Introduction to the A* Algorithm — Red Blob Games",
+                "url": "https://www.redblobgames.com/pathfinding/a-star/introduction.html"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "障碍密度",
+                  "min": 0,
+                  "max": 35,
+                  "step": 1,
+                  "value": 18,
+                  "unit": "%"
+                },
+                {
+                  "key": "spread",
+                  "label": "路径步长成本",
+                  "min": 1,
+                  "max": 5,
+                  "step": 1,
+                  "value": 1,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "world-rollout",
+                "world-ik"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "world-robotics",
+          "name": "机械与感知",
+          "en": "Robotics",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "world-ik",
+              "name": "机械臂逆解",
+              "en": "Robot IK",
+              "description": "点击设置目标位置，计算平面双连杆逆运动学。可切换肘部方向并查看可达误差，不控制真实机器人。",
+              "kind": "runtime",
+              "experiment": "world-ik",
+              "model": "world",
+              "variant": 2,
+              "tags": [
+                "机械臂逆解",
+                "Robot IK"
+              ],
+              "source": {
+                "title": "Kinematics Configuration — MoveIt Documentation",
+                "url": "https://moveit.picknik.ai/main/doc/examples/kinematics_configuration/kinematics_configuration_tutorial.html"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "第一连杆",
+                  "min": 35,
+                  "max": 95,
+                  "step": 1,
+                  "value": 75,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "第二连杆",
+                  "min": 30,
+                  "max": 90,
+                  "step": 1,
+                  "value": 60,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "world-rollout",
+                "world-pathfinding"
+              ]
+            },
+            {
+              "id": "world-mapping",
+              "name": "感知地图",
+              "en": "Occupancy Mapping",
+              "description": "改变扫描范围与传感器方向，用射线把栅格分成未知、空闲和障碍。是二维占据映射示例，不是完整 SLAM。",
+              "kind": "simulation",
+              "experiment": "world-mapping",
+              "model": "world",
+              "variant": 3,
+              "tags": [
+                "感知地图",
+                "Occupancy Mapping"
+              ],
+              "source": {
+                "title": "OctoMap: An Efficient Probabilistic 3D Mapping Framework",
+                "url": "https://octomap.github.io/"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "扫描射线",
+                  "min": 8,
+                  "max": 64,
+                  "step": 4,
+                  "value": 32,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "视场角",
+                  "min": 30,
+                  "max": 360,
+                  "step": 5,
+                  "value": 180,
+                  "unit": "°"
+                }
+              ],
+              "related": [
+                "world-rollout",
+                "world-pathfinding"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spatial",
+      "name": "空间星系",
+      "en": "Spatial Computing",
+      "description": "从点与隐式场到位置编码，观察空间表示。",
+      "theme": "spatial",
+      "color": "#999fed",
+      "sectors": [
+        {
+          "id": "spatial-fields",
+          "name": "软核与隐式场",
+          "en": "Fields",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "spatial-gaussian",
+              "name": "高斯溅射切片",
+              "en": "Gaussian Slice",
+              "description": "点击放置二维高斯核，调整宽度与不透明度，观察软核叠加形成图像。解释溅射表示，不重建真实三维场景。",
+              "kind": "simulation",
+              "experiment": "spatial-gaussian",
+              "model": "spatial",
+              "variant": 0,
+              "tags": [
+                "高斯溅射切片",
+                "Gaussian Slice"
+              ],
+              "source": {
+                "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+                "url": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "核宽度",
+                  "min": 5,
+                  "max": 40,
+                  "step": 1,
+                  "value": 18,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "核不透明度",
+                  "min": 0.1,
+                  "max": 1,
+                  "step": 0.05,
+                  "value": 0.55,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "spatial-sdf",
+                "spatial-encoding"
+              ]
+            },
+            {
+              "id": "spatial-sdf",
+              "name": "隐式曲面工坊",
+              "en": "Signed Distance Field",
+              "description": "用圆与方形的解析距离函数生成等值线，调整平滑并集与间距。这里计算解析 SDF，不训练 DeepSDF。",
+              "kind": "runtime",
+              "experiment": "spatial-sdf",
+              "model": "spatial",
+              "variant": 1,
+              "tags": [
+                "隐式曲面工坊",
+                "Signed Distance Field"
+              ],
+              "source": {
+                "title": "DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation",
+                "url": "https://arxiv.org/abs/1901.05103"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "平滑半径",
+                  "min": 1,
+                  "max": 45,
+                  "step": 1,
+                  "value": 18,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "形体间距",
+                  "min": 15,
+                  "max": 95,
+                  "step": 1,
+                  "value": 50,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "spatial-gaussian",
+                "spatial-encoding"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "spatial-reconstruction-sector",
+          "name": "编码与重建",
+          "en": "Reconstruction",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "spatial-encoding",
+              "name": "位置编码织机",
+              "en": "Position Encoding",
+              "description": "叠加不同频率的正弦基，观察位置编码与重建曲线。是 NeRF 编码思想的局部数学示例，不运行神经渲染器。",
+              "kind": "runtime",
+              "experiment": "spatial-encoding",
+              "model": "spatial",
+              "variant": 2,
+              "tags": [
+                "位置编码织机",
+                "Position Encoding"
+              ],
+              "source": {
+                "title": "NeRF: Representing Scenes as Neural Radiance Fields",
+                "url": "https://www.matthewtancik.com/nerf"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "频率层数",
+                  "min": 1,
+                  "max": 6,
+                  "step": 1,
+                  "value": 3,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "相位偏移",
+                  "min": 0,
+                  "max": 6.28,
+                  "step": 0.05,
+                  "value": 0,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "spatial-gaussian",
+                "spatial-sdf"
+              ]
+            },
+            {
+              "id": "spatial-reconstruction",
+              "name": "点云重建",
+              "en": "Point Reconstruction",
+              "description": "采样有噪声的轮廓点，再按角度排序与邻域平滑生成闭合轮廓。展示采样与重建误差，不实现三维 Poisson 重建。",
+              "kind": "runtime",
+              "experiment": "spatial-reconstruction",
+              "model": "spatial",
+              "variant": 3,
+              "tags": [
+                "点云重建",
+                "Point Reconstruction"
+              ],
+              "source": {
+                "title": "Surface reconstruction — Open3D",
+                "url": "https://www.open3d.org/docs/release/tutorial/geometry/surface_reconstruction.html"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "采样点数",
+                  "min": 12,
+                  "max": 100,
+                  "step": 2,
+                  "value": 48,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "采样噪声",
+                  "min": 0,
+                  "max": 25,
+                  "step": 1,
+                  "value": 8,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "spatial-gaussian",
+                "spatial-sdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "name": "计算星系",
+      "en": "Physics & Compute",
+      "description": "从局部规则到连续运动，让计算形成可见的动力。",
+      "theme": "compute",
+      "color": "#e08071",
+      "sectors": [
+        {
+          "id": "compute-flow",
+          "name": "粒子与流场",
+          "en": "Flow",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "compute-particles",
+              "name": "粒子动力场",
+              "en": "Particle Dynamics",
+              "description": "对粒子执行速度积分、重力和边界碰撞。点击冲击会改变粒子动量；本页使用 Canvas 与 CPU，不宣称使用 WebGPU。",
+              "kind": "simulation",
+              "experiment": "compute-particles",
+              "model": "compute",
+              "variant": 0,
+              "tags": [
+                "粒子动力场",
+                "Particle Dynamics"
+              ],
+              "source": {
+                "title": "Advanced animations — MDN Canvas API",
+                "url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "粒子数量",
+                  "min": 12,
+                  "max": 100,
+                  "step": 4,
+                  "value": 48,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "重力强度",
+                  "min": 0,
+                  "max": 120,
+                  "step": 5,
+                  "value": 35,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "compute-fluid",
+                "compute-boids"
+              ]
+            },
+            {
+              "id": "compute-fluid",
+              "name": "流场示踪",
+              "en": "Flow Advection",
+              "description": "示踪点沿二维解析旋涡速度场移动，点击注入新流束。展示平流和涡量，不是完整不可压缩流体求解器。",
+              "kind": "simulation",
+              "experiment": "compute-fluid",
+              "model": "compute",
+              "variant": 1,
+              "tags": [
+                "流场示踪",
+                "Flow Advection"
+              ],
+              "source": {
+                "title": "Real-Time Fluid Dynamics for Games — Jos Stam",
+                "url": "https://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "旋涡强度",
+                  "min": 0.2,
+                  "max": 3,
+                  "step": 0.1,
+                  "value": 1,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "示踪粒子",
+                  "min": 30,
+                  "max": 160,
+                  "step": 10,
+                  "value": 80,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "compute-particles",
+                "compute-boids"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "compute-collective",
+          "name": "群集与引力",
+          "en": "Collective Motion",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "compute-boids",
+              "name": "群集协同",
+              "en": "Boids Flock",
+              "description": "实时计算分离、对齐和聚合三项群集规则。调整邻域并添加吸引点，观察个体行为形成整体运动。",
+              "kind": "simulation",
+              "experiment": "compute-boids",
+              "model": "compute",
+              "variant": 2,
+              "tags": [
+                "群集协同",
+                "Boids Flock"
+              ],
+              "source": {
+                "title": "Boids — Craig Reynolds",
+                "url": "https://www.red3d.com/cwr/boids/"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "个体数量",
+                  "min": 12,
+                  "max": 60,
+                  "step": 4,
+                  "value": 32,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "感知半径",
+                  "min": 15,
+                  "max": 85,
+                  "step": 5,
+                  "value": 45,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "compute-particles",
+                "compute-fluid"
+              ]
+            },
+            {
+              "id": "compute-gravity",
+              "name": "引力轨道",
+              "en": "Gravity Orbits",
+              "description": "用简化中心引力和速度积分计算轨道，改变中心质量或初始速度。它是数值模拟，不提供天体导航预测。",
+              "kind": "simulation",
+              "experiment": "compute-gravity",
+              "model": "compute",
+              "variant": 3,
+              "tags": [
+                "引力轨道",
+                "Gravity Orbits"
+              ],
+              "source": {
+                "title": "Orbits and Kepler’s Laws — NASA",
+                "url": "https://science.nasa.gov/solar-system/orbits-and-keplers-laws/"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "中心质量",
+                  "min": 20,
+                  "max": 100,
+                  "step": 2,
+                  "value": 60,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "初始速度",
+                  "min": 0.3,
+                  "max": 1.5,
+                  "step": 0.05,
+                  "value": 0.8,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "compute-particles",
+                "compute-fluid"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantum",
+      "name": "量子星系",
+      "en": "Quantum Principles",
+      "description": "在经典模拟中探索振幅、相位、门与关联。",
+      "theme": "quantum",
+      "color": "#b5a2ee",
+      "sectors": [
+        {
+          "id": "quantum-state",
+          "name": "量子态与相位",
+          "en": "States",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "quantum-bloch",
+              "name": "量子态球",
+              "en": "Bloch State",
+              "description": "用极角与方位角表示单量子位纯态，按 Born 概率抽样测量并统计。全部是经典浏览器模拟，不连接量子硬件。",
+              "kind": "simulation",
+              "experiment": "quantum-bloch",
+              "model": "quantum",
+              "variant": 0,
+              "tags": [
+                "量子态球",
+                "Bloch State"
+              ],
+              "source": {
+                "title": "plot_bloch_vector — IBM Quantum Documentation",
+                "url": "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.visualization.plot_bloch_vector"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "极角 θ",
+                  "min": 0,
+                  "max": 180,
+                  "step": 1,
+                  "value": 70,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "方位角 φ",
+                  "min": 0,
+                  "max": 360,
+                  "step": 1,
+                  "value": 30,
+                  "unit": "°"
+                }
+              ],
+              "related": [
+                "quantum-interference",
+                "quantum-bell"
+              ]
+            },
+            {
+              "id": "quantum-interference",
+              "name": "相位干涉",
+              "en": "Phase Interference",
+              "description": "计算两路复振幅叠加的探测概率，改变相位观察增强与相消，并对概率分布抽样。经典计算不等同真实量子实验。",
+              "kind": "simulation",
+              "experiment": "quantum-interference",
+              "model": "quantum",
+              "variant": 1,
+              "tags": [
+                "相位干涉",
+                "Phase Interference"
+              ],
+              "source": {
+                "title": "Quantum Computing Fundamentals — IBM Quantum Learning",
+                "url": "https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations/quantum-computing-fundamentals"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "相位差",
+                  "min": 0,
+                  "max": 360,
+                  "step": 1,
+                  "value": 70,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "可见度",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.05,
+                  "value": 1,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "quantum-bloch",
+                "quantum-bell"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quantum-circuits",
+          "name": "关联与逻辑门",
+          "en": "Circuits",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "quantum-bell",
+              "name": "纠缠关联",
+              "en": "Bell Correlations",
+              "description": "按照理想量子关联公式抽样二元结果，比较相同与不同测量基。统计来自本地伪随机模拟，不能作为物理 Bell 检验。",
+              "kind": "simulation",
+              "experiment": "quantum-bell",
+              "model": "quantum",
+              "variant": 2,
+              "tags": [
+                "纠缠关联",
+                "Bell Correlations"
+              ],
+              "source": {
+                "title": "Bell’s inequality with Qiskit — IBM Quantum Learning",
+                "url": "https://quantum.cloud.ibm.com/learning/en/modules/quantum-mechanics/bells-inequality-with-qiskit"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "测量基差",
+                  "min": 0,
+                  "max": 180,
+                  "step": 1,
+                  "value": 45,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "噪声比例",
+                  "min": 0,
+                  "max": 0.5,
+                  "step": 0.01,
+                  "value": 0,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "quantum-bloch",
+                "quantum-interference"
+              ]
+            },
+            {
+              "id": "quantum-gates",
+              "name": "量子门序列",
+              "en": "Quantum Gate Lab",
+              "description": "在一个复数状态向量上应用 H、X 门，并查看测量概率。振幅运算在浏览器执行，不调用真实量子计算机。",
+              "kind": "simulation",
+              "experiment": "quantum-gates",
+              "model": "quantum",
+              "variant": 3,
+              "tags": [
+                "量子门序列",
+                "Quantum Gate Lab"
+              ],
+              "source": {
+                "title": "HGate — IBM Quantum Documentation",
+                "url": "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.HGate"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "初始极角",
+                  "min": 0,
+                  "max": 180,
+                  "step": 1,
+                  "value": 0,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "初始相位",
+                  "min": 0,
+                  "max": 360,
+                  "step": 1,
+                  "value": 0,
+                  "unit": "°"
+                }
+              ],
+              "related": [
+                "quantum-bloch",
+                "quantum-interference"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life",
+      "name": "生命星系",
+      "en": "Computational Life",
+      "description": "用几何、聚集、反应和优化理解生命相关的计算。",
+      "theme": "life",
+      "color": "#d69aa7",
+      "sectors": [
+        {
+          "id": "life-geometry",
+          "name": "几何与生长",
+          "en": "Geometry",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "life-molecule",
+              "name": "分子几何",
+              "en": "Molecular Geometry",
+              "description": "调整球棍示意模型的键角与键长，测量原子间距。这个三原子模型只用于几何理解，不是力场或药物模拟。",
+              "kind": "simulation",
+              "experiment": "life-molecule",
+              "model": "life",
+              "variant": 0,
+              "tags": [
+                "分子几何",
+                "Molecular Geometry"
+              ],
+              "source": {
+                "title": "Molecular Graphics Programs — RCSB PDB-101",
+                "url": "https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/molecular-graphics-programs"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "键角",
+                  "min": 60,
+                  "max": 180,
+                  "step": 1,
+                  "value": 105,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "键长比例",
+                  "min": 0.5,
+                  "max": 1.5,
+                  "step": 0.05,
+                  "value": 1,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "life-growth",
+                "life-reaction"
+              ]
+            },
+            {
+              "id": "life-growth",
+              "name": "枝晶生长",
+              "en": "Dendritic Growth",
+              "description": "随机游走粒子碰到已有聚集体后附着，逐步形成扩散限制聚集图案。可改变黏附概率、释放粒子并重新播种。",
+              "kind": "simulation",
+              "experiment": "life-growth",
+              "model": "life",
+              "variant": 1,
+              "tags": [
+                "枝晶生长",
+                "Dendritic Growth"
+              ],
+              "source": {
+                "title": "Diffusion-Limited Aggregation, a Kinetic Critical Phenomenon",
+                "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.47.1400"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "释放粒子",
+                  "min": 10,
+                  "max": 80,
+                  "step": 5,
+                  "value": 30,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "黏附概率",
+                  "min": 0.2,
+                  "max": 1,
+                  "step": 0.05,
+                  "value": 0.8,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "life-molecule",
+                "life-reaction"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "life-patterns",
+          "name": "图案与能量",
+          "en": "Patterns",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "life-reaction",
+              "name": "反应扩散",
+              "en": "Reaction Diffusion",
+              "description": "在小网格上数值积分 Gray–Scott 双组分反应扩散方程。点击注入扰动，改变供给与移除率以观察局部图案。",
+              "kind": "simulation",
+              "experiment": "life-reaction",
+              "model": "life",
+              "variant": 2,
+              "tags": [
+                "反应扩散",
+                "Reaction Diffusion"
+              ],
+              "source": {
+                "title": "Complex Patterns in a Simple System — John E. Pearson",
+                "url": "https://arxiv.org/abs/patt-sol/9304003"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "供给率 F",
+                  "min": 0.015,
+                  "max": 0.07,
+                  "step": 0.001,
+                  "value": 0.035,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "移除率 k",
+                  "min": 0.035,
+                  "max": 0.075,
+                  "step": 0.001,
+                  "value": 0.061,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "life-molecule",
+                "life-growth"
+              ]
+            },
+            {
+              "id": "life-folding",
+              "name": "折叠能量景观",
+              "en": "Folding Landscape",
+              "description": "对二维珠链执行简化能量下降并扰动初始构型。用于解释局部优化与能量景观，不运行 AlphaFold，也不预测蛋白质结构。",
+              "kind": "research",
+              "experiment": "life-folding",
+              "model": "life",
+              "variant": 3,
+              "tags": [
+                "折叠能量景观",
+                "Folding Landscape"
+              ],
+              "source": {
+                "title": "AlphaFold — Google DeepMind",
+                "url": "https://deepmind.google/science/alphafold/"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "链段数量",
+                  "min": 6,
+                  "max": 20,
+                  "step": 1,
+                  "value": 12,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "折叠步长",
+                  "min": 0.01,
+                  "max": 0.15,
+                  "step": 0.01,
+                  "value": 0.05,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "life-molecule",
+                "life-growth"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "optics",
+      "name": "光学星系",
+      "en": "Light & Materials",
+      "description": "让光的方向、颜色与偏振成为可操作的实验。",
+      "theme": "optics",
+      "color": "#dfbe78",
+      "sectors": [
+        {
+          "id": "optics-transmission",
+          "name": "折射与色散",
+          "en": "Transmission",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "optics-refraction",
+              "name": "折射边界",
+              "en": "Refraction Boundary",
+              "description": "用斯涅尔定律计算两种介质界面的折射角；临界条件下显示全反射。折射率可切换介质，并记录当前角度。",
+              "kind": "runtime",
+              "experiment": "optics-refraction",
+              "model": "optics",
+              "variant": 0,
+              "tags": [
+                "折射边界",
+                "Refraction Boundary"
+              ],
+              "source": {
+                "title": "Refraction — OpenStax University Physics",
+                "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "入射角",
+                  "min": 0,
+                  "max": 85,
+                  "step": 1,
+                  "value": 40,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "第二介质折射率",
+                  "min": 1,
+                  "max": 2.2,
+                  "step": 0.05,
+                  "value": 1.5,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "optics-dispersion",
+                "optics-brdf"
+              ]
+            },
+            {
+              "id": "optics-dispersion",
+              "name": "色散棱镜",
+              "en": "Dispersion Prism",
+              "description": "用随波长变化的简化折射率，计算多色光束的出射方向。用于观察色散趋势，不是完整透镜或玻璃光谱模型。",
+              "kind": "simulation",
+              "experiment": "optics-dispersion",
+              "model": "optics",
+              "variant": 1,
+              "tags": [
+                "色散棱镜",
+                "Dispersion Prism"
+              ],
+              "source": {
+                "title": "Dispersion — OpenStax University Physics",
+                "url": "https://openstax.org/books/university-physics-volume-3/pages/1-5-dispersion"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "入射角",
+                  "min": 10,
+                  "max": 60,
+                  "step": 1,
+                  "value": 35,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "色散强度",
+                  "min": 0,
+                  "max": 0.25,
+                  "step": 0.01,
+                  "value": 0.1,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "optics-refraction",
+                "optics-brdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "optics-surface",
+          "name": "反射与偏振",
+          "en": "Surface",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "optics-brdf",
+              "name": "材质反射瓣",
+              "en": "Material Reflectance",
+              "description": "绘制简化漫反射与高光反射分布，调整粗糙度和金属权重。说明反射瓣形态，不完整实现 Disney BRDF。",
+              "kind": "simulation",
+              "experiment": "optics-brdf",
+              "model": "optics",
+              "variant": 2,
+              "tags": [
+                "材质反射瓣",
+                "Material Reflectance"
+              ],
+              "source": {
+                "title": "BRDF Explorer — Walt Disney Animation Studios",
+                "url": "https://github.com/wdas/brdf"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "粗糙度",
+                  "min": 0.05,
+                  "max": 1,
+                  "step": 0.05,
+                  "value": 0.35,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "金属权重",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.05,
+                  "value": 0.7,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "optics-refraction",
+                "optics-dispersion"
+              ]
+            },
+            {
+              "id": "optics-polarization",
+              "name": "偏振之门",
+              "en": "Polarization Gate",
+              "description": "用马吕斯定律计算两片偏振器之间的透过率，并比较加入中间偏振片后的结果。完全是局部数学计算。",
+              "kind": "runtime",
+              "experiment": "optics-polarization",
+              "model": "optics",
+              "variant": 3,
+              "tags": [
+                "偏振之门",
+                "Polarization Gate"
+              ],
+              "source": {
+                "title": "Polarization — OpenStax University Physics",
+                "url": "https://openstax.org/books/university-physics-volume-3/pages/1-7-polarization"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "分析器角度",
+                  "min": 0,
+                  "max": 180,
+                  "step": 1,
+                  "value": 65,
+                  "unit": "°"
+                },
+                {
+                  "key": "spread",
+                  "label": "中间偏振片角度",
+                  "min": 0,
+                  "max": 180,
+                  "step": 1,
+                  "value": 35,
+                  "unit": "°"
+                }
+              ],
+              "related": [
+                "optics-refraction",
+                "optics-dispersion"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "art",
+      "name": "艺术星系",
+      "en": "Generative Art",
+      "description": "把混沌、规则和振动转成有秩序的图案。",
+      "theme": "art",
+      "color": "#da8c83",
+      "sectors": [
+        {
+          "id": "art-rules",
+          "name": "混沌与规则",
+          "en": "Rules",
+          "description": "探索基本表示与运动规律。",
+          "planets": [
+            {
+              "id": "art-attractor",
+              "name": "混沌吸引子",
+              "en": "Lorenz Attractor",
+              "description": "数值积分 Lorenz 方程并将轨迹投影成图。改变参数或微扰初值，比较两条轨迹如何分离；不作天气预测。",
+              "kind": "runtime",
+              "experiment": "art-attractor",
+              "model": "art",
+              "variant": 0,
+              "tags": [
+                "混沌吸引子",
+                "Lorenz Attractor"
+              ],
+              "source": {
+                "title": "Deterministic Nonperiodic Flow — Edward N. Lorenz",
+                "url": "https://journals.ametsoc.org/doi/abs/10.1175/1520-0469%281963%29020%3C0130%3Adnf%3E2.0.CO%3B2"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "ρ 参数",
+                  "min": 10,
+                  "max": 45,
+                  "step": 0.5,
+                  "value": 28,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "σ 参数",
+                  "min": 5,
+                  "max": 18,
+                  "step": 0.5,
+                  "value": 10,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "art-lsystem",
+                "art-waves"
+              ]
+            },
+            {
+              "id": "art-lsystem",
+              "name": "规则生长树",
+              "en": "L-System Tree",
+              "description": "按字符串重写规则生成分枝，再用海龟绘图解释符号。可切换规则、改变分枝角和迭代深度。",
+              "kind": "runtime",
+              "experiment": "art-lsystem",
+              "model": "art",
+              "variant": 1,
+              "tags": [
+                "规则生长树",
+                "L-System Tree"
+              ],
+              "source": {
+                "title": "The Algorithmic Beauty of Plants — Algorithmic Botany",
+                "url": "https://algorithmicbotany.org/papers/#abop"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "迭代深度",
+                  "min": 1,
+                  "max": 5,
+                  "step": 1,
+                  "value": 3,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "分枝角",
+                  "min": 10,
+                  "max": 45,
+                  "step": 1,
+                  "value": 25,
+                  "unit": "°"
+                }
+              ],
+              "related": [
+                "art-attractor",
+                "art-waves"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "art-resonance",
+          "name": "波动与谐振",
+          "en": "Resonance",
+          "description": "观察组合、协作与结构变化。",
+          "planets": [
+            {
+              "id": "art-waves",
+              "name": "驻波纹理",
+              "en": "Standing Wave Patterns",
+              "description": "叠加二维波函数，显示振幅与近零节点。改变模态整数、翻转相位或加入扰动，观察驻波纹理变化；没有自动音频。",
+              "kind": "simulation",
+              "experiment": "art-waves",
+              "model": "art",
+              "variant": 2,
+              "tags": [
+                "驻波纹理",
+                "Standing Wave Patterns"
+              ],
+              "source": {
+                "title": "Standing Waves and Resonance — OpenStax University Physics",
+                "url": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "水平模态",
+                  "min": 1,
+                  "max": 8,
+                  "step": 1,
+                  "value": 3,
+                  "unit": ""
+                },
+                {
+                  "key": "spread",
+                  "label": "垂直模态",
+                  "min": 1,
+                  "max": 8,
+                  "step": 1,
+                  "value": 4,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "art-attractor",
+                "art-lsystem"
+              ]
+            },
+            {
+              "id": "art-harmonograph",
+              "name": "谐振绘图仪",
+              "en": "Harmonograph",
+              "description": "叠加两个带阻尼的正弦摆动轨迹，绘制不断收敛的曲线。调整频率比和阻尼，切换相位得到不同图案；没有自动音频。",
+              "kind": "runtime",
+              "experiment": "art-harmonograph",
+              "model": "art",
+              "variant": 3,
+              "tags": [
+                "谐振绘图仪",
+                "Harmonograph"
+              ],
+              "source": {
+                "title": "Harmonograph — Wolfram MathWorld",
+                "url": "https://mathworld.wolfram.com/Harmonograph.html"
+              },
+              "controls": [
+                {
+                  "key": "amount",
+                  "label": "频率比",
+                  "min": 1,
+                  "max": 4,
+                  "step": 0.05,
+                  "value": 2.1,
+                  "unit": ""
+                },
+                {
+                  "key": "rate",
+                  "label": "阻尼",
+                  "min": 0.001,
+                  "max": 0.03,
+                  "step": 0.001,
+                  "value": 0.008,
+                  "unit": ""
+                }
+              ],
+              "related": [
+                "art-attractor",
+                "art-lsystem"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
