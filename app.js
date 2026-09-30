@@ -1,159 +1,79 @@
-const $ = (selector) => document.querySelector(selector);
+import { mountDemo, previewMarkup } from './src/demos.js';
+const $ = (s) => document.querySelector(s);
 const categories = [
-  { id: 'styles', name: '视觉风格', en: 'VISUAL LANGUAGE', note: '排版、质感与构图' },
-  { id: 'css', name: 'CSS 与布局', en: 'CSS & LAYOUT', note: '网页的结构与表现' },
-  { id: 'motion', name: '动效与滚动', en: 'MOTION & SCROLL', note: '时间维度的表达' },
-  { id: 'graphics', name: '3D 与图形', en: '3D & GRAPHICS', note: '把画面带入空间' },
-  { id: 'frameworks', name: '框架与组件', en: 'UI & FRAMEWORKS', note: '构建界面的组织方式' },
-  { id: 'data', name: '状态与数据', en: 'STATE & DATA', note: '让交互保持一致' },
-  { id: 'platform', name: '浏览器能力', en: 'WEB PLATFORM', note: '连接设备与环境' },
-  { id: 'delivery', name: '性能与工程', en: 'PERFORMANCE & BUILD', note: '更快、更可靠地交付' },
-  { id: 'quality', name: '体验与质量', en: 'ACCESSIBILITY & TEST', note: '让更多人顺畅使用' },
-  { id: 'emerging', name: '前沿与实验', en: 'EMERGING FEATURES', note: '探索下一步的可能' },
+{id:'navigation',name:'导航与菜单',en:'NAVIGATION',note:'网站的方向与入口'},
+{id:'layout',name:'界面与布局',en:'LAYOUT',note:'内容如何组织与排列'},
+{id:'actions',name:'按钮与操作',en:'ACTIONS',note:'每一次点击的回应'},
+{id:'forms',name:'表单与输入',en:'FORMS & INPUT',note:'输入、选择与验证'},
+{id:'content',name:'卡片与内容',en:'CONTENT',note:'把信息呈现得清晰'},
+{id:'feedback',name:'状态与反馈',en:'FEEDBACK',note:'让用户看见变化'},
+{id:'overlays',name:'弹窗与浮层',en:'OVERLAYS',note:'在需要的时候出现'},
+{id:'media',name:'图片与媒体',en:'MEDIA',note:'图像、画廊与观看'},
+{id:'motion',name:'动效与交互',en:'MOTION',note:'让界面有时间与节奏'},
+{id:'three',name:'3D 与视觉',en:'THREE.JS',note:'超越平面的表达'},
 ];
-const categoryById = Object.fromEntries(categories.map((c) => [c.id, c]));
-const state = { entries: [], category: 'all', kind: 'all', query: '', visible: 24, activeEntry: null };
-let saved;
-try { saved = new Set(JSON.parse(localStorage.getItem('frame-atlas.saved.v1') || '[]')); }
-catch { saved = new Set(); }
-const escape = (text) => String(text).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-const normalized = (text) => String(text).normalize('NFKC').toLowerCase().replace(/[.-]/g, '');
-const bookmarkIcon = '<svg viewBox="0 0 16 20" aria-hidden="true"><path d="M2 1h12v17l-6-4-6 4z"/></svg>';
-function preview(entry) {
-  const demo = /^[a-z0-9-]+$/.test(entry.demo) ? entry.demo : 'code';
-  const label = demo === 'terminal' ? 'build the web' : demo === 'swiss' ? 'Aa / 01' : demo === 'editorial' ? 'The Art of Web' : demo === 'kinetic' ? 'FORM' : entry.kind === 'style' ? 'Design.' : 'Build.';
-  return `<div class="demo demo-${escape(demo)}" aria-hidden="true"><div class="mini-frame"><div class="mini-head"><i></i><i></i><i></i><span></span></div><div class="mini-title">${label}</div><div class="mini-subtitle"></div><div class="mini-grid"><div></div><div></div><div></div></div></div><span class="demo-label">${escape(entry.en.toUpperCase())}</span></div>`;
-}
-function notify(message) {
-  $('#toast').textContent = message;
-  $('#toast').classList.add('visible');
-  clearTimeout(notify.timer);
-  notify.timer = setTimeout(() => $('#toast').classList.remove('visible'), 2200);
-}
-function updateSaved() { $('#saved-count').textContent = saved.size; }
-function toggleSaved(id) {
-  if (saved.has(id)) { saved.delete(id); notify('已取消收藏'); }
-  else { saved.add(id); notify('已加入本机收藏'); }
-  try { localStorage.setItem('frame-atlas.saved.v1', JSON.stringify([...saved])); }
-  catch { notify('浏览器未允许保存，收藏仅在本次浏览中保留'); }
-  updateSaved();
-  if (state.kind === 'saved') renderCatalog();
-  else document.querySelectorAll(`.card-save[data-save="${id}"]`).forEach((button) => {
-    button.classList.toggle('is-saved', saved.has(id));
-    button.setAttribute('aria-pressed', String(saved.has(id)));
-    button.setAttribute('aria-label', `${saved.has(id) ? '取消收藏' : '收藏'} ${state.entries.find((e) => e.id === id)?.name || ''}`);
-  });
-  if (state.activeEntry?.id === id) updateDetailSave();
-}
-function renderOverview() {
-  $('#total-count').textContent = state.entries.length;
-  $('#category-map').innerHTML = categories.map((c, i) => {
-    const count = state.entries.filter((e) => e.category === c.id).length;
-    return `<button class="category-tile" data-category="${c.id}" aria-label="检索${c.name}，${count}项"><div class="category-top"><span>${String(i + 1).padStart(2, '0')} / ${String(count).padStart(2, '0')} 项</span><b>↗</b></div><h3>${c.name}</h3><p>${c.en}</p></button>`;
-  }).join('');
-  const specimens = ['bento', 'glass', 'swiss', 'brutal', 'editorial', 'generative'];
-  $('#style-showcase').innerHTML = specimens.map((key) => {
-    const e = state.entries.find((entry) => entry.kind === 'style' && entry.demo === key);
-    return e ? `<button class="style-card" data-open="${e.id}" aria-label="了解${escape(e.name)}">${preview(e)}<div class="style-caption"><div><h3>${escape(e.name)}</h3><p>${escape(e.en)}</p></div><span>↗</span></div></button>` : '';
-  }).join('');
-  $('#category-filters').innerHTML = `<button data-filter="all" class="active" aria-pressed="true">全部门类</button>` + categories.map((c) => `<button data-filter="${c.id}" aria-pressed="false">${c.name}</button>`).join('');
-}
-function filteredEntries() {
-  const terms = normalized(state.query).trim().split(/\s+/).filter(Boolean);
-  return state.entries.filter((entry) => {
-    const categoryMatch = state.category === 'all' || entry.category === state.category;
-    const kindMatch = state.kind === 'all' || (state.kind === 'saved' ? saved.has(entry.id) : entry.kind === state.kind);
-    const searchable = normalized([entry.name, entry.en, entry.description, categoryById[entry.category].name, ...(entry.tags || [])].join(' '));
-    return categoryMatch && kindMatch && terms.every((term) => searchable.includes(term));
-  });
-}
-function renderCatalog() {
-  const results = filteredEntries();
-  $('#result-count').textContent = `找到 ${results.length} 项 · 当前显示 ${Math.min(state.visible, results.length)} 项`;
-  $('#clear-filters').hidden = state.category === 'all' && state.kind === 'all' && !state.query;
-  $('#empty-state').hidden = results.length > 0;
-  $('#load-more').hidden = results.length <= state.visible;
-  $('#catalog-grid').innerHTML = results.slice(0, state.visible).map((entry) => `<article class="catalog-card"><button class="card-open" data-open="${entry.id}" aria-label="查看${escape(entry.name)}详情">${preview(entry)}<div class="card-content"><div class="card-meta"><span>${categoryById[entry.category].name}</span><span class="dot"></span><span>${entry.kind === 'style' ? '视觉模式' : entry.level}</span></div><h3>${escape(entry.name)}</h3><p class="card-en">${escape(entry.en)}</p><p class="card-desc">${escape(entry.description)}</p></div></button><button class="card-save ${saved.has(entry.id) ? 'is-saved' : ''}" data-save="${entry.id}" aria-label="${saved.has(entry.id) ? '取消收藏' : '收藏'} ${escape(entry.name)}" aria-pressed="${saved.has(entry.id)}">${bookmarkIcon}</button></article>`).join('');
-  document.querySelectorAll('[data-filter]').forEach((button) => { const active = button.dataset.filter === state.category; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
-  document.querySelectorAll('[data-kind]').forEach((button) => { const active = button.dataset.kind === state.kind; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
-}
-function filter({ category = state.category, kind = state.kind, query = state.query } = {}, scroll = false) {
-  state.category = category; state.kind = kind; state.query = query; state.visible = 24;
-  $('#search').value = query;
-  renderCatalog();
-  if (scroll) $('#library').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-}
-function reset() { filter({ category: 'all', kind: 'all', query: '' }); }
-function updateDetailSave() {
-  const active = saved.has(state.activeEntry.id);
-  $('#detail-save').textContent = active ? '已收藏 · 点击取消 ✓' : '收藏此条目 ♧';
-  $('#detail-save').setAttribute('aria-pressed', String(active));
-}
-function openDetail(id) {
-  const entry = state.entries.find((e) => e.id === id);
-  if (!entry) return;
-  state.activeEntry = entry;
-  $('#detail-category').textContent = `${categoryById[entry.category].en} / ${entry.kind === 'style' ? 'STYLE' : 'TECHNOLOGY'}`;
-  $('#detail-preview').innerHTML = preview(entry);
-  $('#detail-en').textContent = entry.en;
-  $('#detail-title').textContent = entry.name;
-  $('#detail-description').textContent = entry.description;
-  $('#detail-badges').innerHTML = [...new Set([entry.kind === 'style' ? '视觉模式' : entry.level, entry.support])].map((value) => `<span>${escape(value)}</span>`).join('');
-  $('#detail-uses').innerHTML = entry.useCases.map((value) => `<li>${escape(value)}</li>`).join('');
-  $('#detail-tags').innerHTML = entry.tags.map((value) => `<span>${escape(value)}</span>`).join('');
-  const related = (entry.related || []).map((r) => state.entries.find((e) => e.id === r)).filter(Boolean);
-  $('#detail-related-wrap').hidden = related.length === 0;
-  $('#detail-related').innerHTML = related.map((e) => `<button data-open="${e.id}">${escape(e.name)} ↗</button>`).join('');
-  $('#detail-doc').href = /^https:\/\//.test(entry.doc) ? entry.doc : 'https://developer.mozilla.org/zh-CN/docs/Web';
-  updateDetailSave();
-  const dialog = $('#detail-dialog');
-  if (!dialog.open) dialog.showModal();
-  dialog.scrollTop = 0;
-  $('#detail-close').focus();
-}
-document.addEventListener('click', (event) => {
-  const open = event.target.closest('[data-open]');
-  const save = event.target.closest('[data-save]');
-  const cat = event.target.closest('[data-category]');
-  const categoryFilter = event.target.closest('[data-filter]');
-  const kind = event.target.closest('[data-kind]');
-  if (open) openDetail(open.dataset.open);
-  if (save) toggleSaved(save.dataset.save);
-  if (cat) filter({ category: cat.dataset.category, kind: 'all', query: '' }, true);
-  if (categoryFilter) filter({ category: categoryFilter.dataset.filter });
-  if (kind) filter({ kind: kind.dataset.kind, category: kind.dataset.kind === 'style' ? 'styles' : (state.category === 'styles' ? 'all' : state.category) });
+const categoryMap = Object.fromEntries(categories.map(c=>[c.id,c]));
+const state = {entries:[],category:'all',view:'all',query:'',visible:24,active:null};
+const escape = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normalize = v => String(v).normalize('NFKC').toLowerCase().replace(/[.\-_]/g,'');
+let saved = new Set(), demoCleanup = null, threeCleanup = null, detailRevision = 0;
+try {saved=new Set(JSON.parse(localStorage.getItem('frame.components.saved.v2')||'[]'));}catch{}
+const featureCleanups = [];
+let graphics;
+const graphicReady = import('./graphics.js').then(module=>{graphics=module;return module;}).catch(error=>{
+ console.warn('Graphics fallback:',error.message);
+ // Content remains available even when the graphics module cannot load.
+ $('#hero-fallback').hidden=false;$('#lab-fallback').hidden=false;
+ const remaining=Math.max(0,5000-(performance.now()-pageStarted));
+ setTimeout(()=>{document.body.classList.add('intro-reveal');$('#intro').classList.add('is-exiting');},Math.max(0,remaining-700));
+ setTimeout(finishFallback,remaining);
+ return null;
 });
-$('#search').addEventListener('input', () => filter({ query: $('#search').value }));
-$('#all-styles').addEventListener('click', () => filter({ category: 'styles', kind: 'style', query: '' }, true));
-$('#saved-nav').addEventListener('click', () => filter({ category: 'all', kind: 'saved', query: '' }, true));
-$('#three-details').addEventListener('click', () => openDetail('three-js'));
-$('#clear-filters').addEventListener('click', reset);
-$('#empty-reset').addEventListener('click', reset);
-$('#load-more').addEventListener('click', () => { state.visible += 24; renderCatalog(); });
-$('#detail-close').addEventListener('click', () => $('#detail-dialog').close());
-$('#detail-save').addEventListener('click', () => toggleSaved(state.activeEntry.id));
-$('#detail-dialog').addEventListener('click', (event) => { if (event.target === $('#detail-dialog')) { const r = event.target.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) event.target.close(); } });
-document.addEventListener('keydown', (event) => {
-  if (event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName) && !$('#detail-dialog').open) { event.preventDefault(); $('#library').scrollIntoView(); $('#search').focus({ preventScroll: true }); }
-});
-updateSaved();
-try {
-  const response = await fetch('./catalog.json');
-  if (!response.ok) throw new Error(`Catalog ${response.status}`);
-  state.entries = await response.json();
-  // Interleave categories so the initial catalog presents the full landscape.
-  const groups = categories.map((c) => state.entries.filter((e) => e.category === c.id));
-  state.entries = [];
-  for (let i = 0; groups.some((g) => g[i]); i++) groups.forEach((g) => { if (g[i]) state.entries.push(g[i]); });
-  const ids = new Set(state.entries.map((e) => e.id));
-  saved = new Set([...saved].filter((id) => ids.has(id)));
-  updateSaved(); renderOverview(); renderCatalog();
-} catch (error) {
-  $('#result-count').textContent = '图谱暂未加载。请刷新页面重试。';
-  $('#catalog-grid').innerHTML = '<p>可以先体验 Three.js 实验室，或访问页面底部的官方资料。</p>';
-  console.warn('Catalog unavailable:', error.message);
+const pageStarted=performance.now();
+function finishFallback(){document.body.classList.remove('intro-active','intro-reveal');$('#site-content').inert=false;$('#intro').hidden=true;}
+function notify(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('#toast').classList.remove('visible'),2300);}
+function updateSaved(){ $('#saved-count').textContent=saved.size;document.querySelectorAll('[data-save]').forEach(button=>{const yes=saved.has(button.dataset.save);button.classList.toggle('is-saved',yes);button.setAttribute('aria-pressed',String(yes));const entry=state.entries.find(e=>e.id===button.dataset.save);button.setAttribute('aria-label',`${yes?'取消收藏':'收藏'} ${entry?.name||''}`);});if(state.active)$('#detail-save').textContent=saved.has(state.active.id)?'已收藏 · 取消 ♧':'收藏此样式 ♧';}
+function toggleSaved(id){saved.has(id)?saved.delete(id):saved.add(id);try{localStorage.setItem('frame.components.saved.v2',JSON.stringify([...saved]));notify(saved.has(id)?'已加入本机收藏':'已取消收藏');}catch{notify('收藏保存在本次浏览中');}if(state.view==='saved')renderCatalog();updateSaved();}
+function overview(){
+ $('#total-count').textContent=state.entries.length;
+ $('#category-map').innerHTML=categories.map((c,i)=>`<button class="category-tile" data-category="${c.id}" aria-label="查看${c.name}"><div class="category-top"><span>${String(i+1).padStart(2,'0')} / ${state.entries.filter(e=>e.category===c.id).length} STYLES</span><b>↗</b></div><h3>${c.name}</h3><p>${c.en}</p><small>${c.note}</small></button>`).join('');
+ $('#category-filters').innerHTML='<button class="active" data-filter="all" aria-pressed="true">全部分类</button>'+categories.map(c=>`<button data-filter="${c.id}" aria-pressed="false">${c.name}</button>`).join('');
+ const picks=['navigation','actions','content'].map(category=>state.entries.find(e=>e.category===category));
+ $('#feature-showcase').innerHTML=picks.map((e,i)=>`<article class="featured-item"><div class="featured-demo" id="featured-demo-${i}"></div><div class="featured-footer"><div><strong>${escape(e.name)}</strong><p>${escape(e.en)}</p></div><button data-open="${e.id}" aria-label="打开${escape(e.name)}详情">↗</button></div></article>`).join('');
+ picks.forEach((e,i)=>{const cleanup=mountDemo($(`#featured-demo-${i}`),e);if(typeof cleanup==='function')featureCleanups.push(cleanup);});
 }
-import('./graphics.js').then(({ initGraphics }) => initGraphics()).catch(() => {
-  $('#hero-fallback').hidden = false; $('#lab-fallback').hidden = false;
-  $('#hero-pause').disabled = true;
-});
+function filtered(){const words=normalize(state.query).trim().split(/\s+/).filter(Boolean);return state.entries.filter(e=>(state.category==='all'||e.category===state.category)&&(state.view==='all'||saved.has(e.id))&&words.every(word=>normalize([e.name,e.en,e.description,e.interaction,categoryMap[e.category].name,...e.tags].join(' ')).includes(word)));}
+function interleave(entries){const buckets=categories.map(c=>entries.filter(e=>e.category===c.id));const result=[];let i=0;while(buckets.some(b=>b.length>i)){for(const b of buckets)if(b[i])result.push(b[i]);i++;}return result;}
+function renderCatalog(){
+ const entries=state.category==='all'&&state.view==='all'&&!state.query?interleave(filtered()):filtered();
+ $('#result-count').textContent=`找到 ${entries.length} 种样式 · 当前显示 ${Math.min(state.visible,entries.length)} 种`;
+ $('#empty-state').hidden=entries.length>0;$('#load-more').hidden=entries.length<=state.visible;
+ $('#clear-filters').hidden=state.category==='all'&&state.view==='all'&&!state.query;
+ $('#catalog-grid').innerHTML=entries.slice(0,state.visible).map(e=>`<article class="catalog-card"><button class="card-open" data-open="${e.id}" aria-label="体验${escape(e.name)}">${previewMarkup(e)}<div class="card-content"><div class="card-meta"><span>${categoryMap[e.category].name}</span><span>LIVE DEMO ↗</span></div><h3>${escape(e.name)}</h3><p class="card-en">${escape(e.en)}</p><p class="card-description">${escape(e.description)}</p></div></button><button class="card-save" data-save="${e.id}" aria-label="收藏 ${escape(e.name)}" aria-pressed="false">♧</button></article>`).join('');
+ document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===state.category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+ document.querySelectorAll('[data-view]').forEach(b=>{const active=b.dataset.view===state.view;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+ updateSaved();
+}
+function filter({category=state.category,view=state.view,query=state.query}={},scroll=false){state.category=category;state.view=view;state.query=query;state.visible=24;$('#search').value=query;renderCatalog();if(scroll)$('#library').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});}
+function destroyDemo(){detailRevision++;if(typeof demoCleanup==='function')demoCleanup();if(typeof threeCleanup==='function')threeCleanup();demoCleanup=threeCleanup=null;}
+async function renderDetailDemo(){destroyDemo();if(!state.active)return;const token=detailRevision,entry=state.active;$('#detail-preview').innerHTML='';demoCleanup=mountDemo($('#detail-preview'),entry);if(entry.category==='three'){const module=await graphicReady;if(token!==detailRevision||!$('#detail-dialog').open)return;if(module?.mountThreeDemo){const host=$('#detail-preview .three-detail-host')||$('#detail-preview .three-live-stage');if(host)threeCleanup=module.mountThreeDemo(host,entry);}}}
+function openDetail(id){const e=state.entries.find(entry=>entry.id===id);if(!e)return;state.active=e;$('#detail-category').textContent=categoryMap[e.category].en+' / '+categoryMap[e.category].name;$('#detail-en').textContent=e.en;$('#detail-title').textContent=e.name;$('#detail-description').textContent=e.description;$('#detail-interaction').textContent='操作提示 / '+e.interaction;$('#detail-uses').innerHTML=e.useCases.map(v=>`<li>${escape(v)}</li>`).join('');$('#detail-tags').innerHTML=e.tags.map(v=>`<span>${escape(v)}</span>`).join('');$('#detail-related').innerHTML=e.related.map(id=>state.entries.find(x=>x.id===id)).filter(Boolean).map(r=>`<button data-open="${r.id}">${escape(r.name)} ↗</button>`).join('');$('#demo-size').value='wide';$('#detail-preview').classList.remove('narrow');if(!$('#detail-dialog').open)$('#detail-dialog').showModal();renderDetailDemo();updateSaved();}
+function bind(){
+ document.addEventListener('click',event=>{if(document.body.classList.contains('intro-active'))return;const labLink=event.target.closest('a[href="#lab"]');if(labLink&&labLink.closest('#detail-preview')){event.preventDefault();const variant=state.active?.variant;const scene=['fluid','bloom'].includes(variant)?'waves':['particles','instances','picking'].includes(variant)?'vortex':'aurora';document.dispatchEvent(new CustomEvent('frame:open-lab',{detail:{scene}}));return;}const b=event.target.closest('button');if(!b)return;if(b.dataset.open)openDetail(b.dataset.open);else if(b.dataset.save)toggleSaved(b.dataset.save);else if(b.dataset.category)filter({category:b.dataset.category,view:'all',query:''},true);else if(b.dataset.filter)filter({category:b.dataset.filter});else if(b.dataset.view)filter({view:b.dataset.view});});
+ $('#search').addEventListener('input',event=>filter({query:event.target.value}));
+ $('#saved-nav').addEventListener('click',()=>filter({category:'all',view:'saved',query:''},true));
+ $('#three-patterns').addEventListener('click',()=>filter({category:'three',view:'all',query:''},true));
+ $('#clear-filters').addEventListener('click',()=>filter({category:'all',view:'all',query:''}));$('#empty-reset').addEventListener('click',()=>filter({category:'all',view:'all',query:''}));
+ $('#load-more').addEventListener('click',()=>{state.visible+=24;renderCatalog();});
+ $('#detail-close').addEventListener('click',()=>$('#detail-dialog').close());
+ $('#detail-dialog').addEventListener('close',()=>{destroyDemo();state.active=null;$('#detail-preview').innerHTML='';});
+ $('#detail-dialog').addEventListener('click',event=>{if(event.target!==$('#detail-dialog'))return;const r=$('#detail-dialog').getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$('#detail-dialog').close();});
+ $('#detail-save').addEventListener('click',()=>{if(state.active)toggleSaved(state.active.id);});$('#demo-reset').addEventListener('click',renderDetailDemo);
+ $('#demo-size').addEventListener('change',event=>$('#detail-preview').classList.toggle('narrow',event.target.value==='narrow'));
+ $('#copy-name').addEventListener('click',async()=>{if(!state.active)return;try{await navigator.clipboard.writeText(`${state.active.name} / ${state.active.en}`);notify('已复制样式名称');}catch{notify('名称：'+state.active.en);}});
+ document.addEventListener('keydown',event=>{if(document.body.classList.contains('intro-active')||$('#detail-dialog').open||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;if(event.key==='/'){event.preventDefault();$('#search').focus();}});
+ // Details can offer a guided jump to the full Three.js gallery.
+ document.addEventListener('frame:open-lab',event=>{if($('#detail-dialog').open)$('#detail-dialog').close();if(event.detail?.scene)window.dispatchEvent(new CustomEvent('frame:scene',{detail:{scene:event.detail.scene}}));$('#lab').scrollIntoView({behavior:'smooth'});});
+}
+async function init(){try{const response=await fetch('./catalog.json');if(!response.ok)throw Error('catalog HTTP'+response.status);state.entries=await response.json();if(!Array.isArray(state.entries)||state.entries.some(e=>!categoryMap[e.category]))throw Error('invalid catalog');saved=new Set([...saved].filter(id=>state.entries.some(e=>e.id===id)));overview();bind();renderCatalog();if(location.hash){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{}if(id)requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({behavior:'instant'}));}}catch(error){$('#result-count').textContent='样式暂时未加载，请刷新页面重试。';console.error(error);}}
+init();
