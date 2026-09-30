@@ -24,7 +24,9 @@ float fbm(vec2 p){float s=0.,a=.53;mat2 m=mat2(1.61,1.21,-1.21,1.61);for(int i=0
 float spiral(float r,float arm){return 2.65*log(r+.075)+mix(.25,3.33159265,arm)+.13*sin(r*11.+arm*2.)+.045*sin(r*31.);}
 float angularDistance(float a,float b){return atan(sin(a-b),cos(a-b));}
 vec2 rotate2(vec2 p,float a){float c=cos(a),s=sin(a);return vec2(c*p.x-s*p.y,s*p.x+c*p.y);}
-float drift(float r){return uTime*.00055/(.45+r);}
+// Differential flow is shared by stars and inverse-sampled gas/dust.
+// About 2–6 degrees over five seconds across the visible disk.
+float drift(float r){return uTime*.012/(.55+r);}
 `;
 const STAR_VERTEX=`
 attribute vec3 aColor;attribute float aSize;attribute float aPhase;attribute float aOpacity;attribute float aDust;
@@ -32,7 +34,9 @@ varying vec3 vColor;varying float vOpacity;
 ${COMMON}
 void main(){
 vec3 p=position;float r=length(p.xz),rn=r/uGalaxyRadius;
-p.xz=rotate2(p.xz,drift(rn));p.y+=sin(uTime*.045+aPhase)*uGalaxyRadius*.0008;
+p.xz=rotate2(p.xz,drift(rn));
+float turbulence=(.68*sin(uTime*.55+aPhase)+.32*sin(uTime*.27+rn*14.+aPhase*2.));
+p.y+=turbulence*uGalaxyRadius*.0032*(.25+.75*smoothstep(.08,.60,rn));
 vec3 world=(modelMatrix*vec4(p,1.)).xyz;vec3 attraction=uGravity-world;float dist=length(attraction);
 vec3 localAttraction=(vec4(attraction,0.)*modelMatrix).xyz;
 p+=localAttraction*uPull*exp(-dist/max(1.,uGalaxyRadius*.35))*.12;
@@ -45,7 +49,9 @@ vec3 cameraLocal=(vec4(cameraPosition-modelMatrix[3].xyz,0.)*modelMatrix).xyz;
 float side=cameraLocal.y<0.?-1.:1.;
 float behind=1.-smoothstep(-uGalaxyRadius*.013,uGalaxyRadius*.013,side*position.y);
 float extinction=1.-aDust*(.32+.60*behind);
-float rare=step(6.11,aPhase),flicker=1.+rare*.11*sin(uTime*.14+aPhase*2.);
+float rare=step(6.11,aPhase);
+float twinkle=sin(uTime*(.75+.55*fract(aPhase*8.71))+aPhase*11.7);
+float flicker=1.+rare*.42*twinkle;
 vColor=aColor*(1.+wave*.16);vOpacity=aOpacity*extinction*flicker*uDim*smoothstep(0.,.15,uReveal);}
 `;
 const STAR_FRAGMENT=`
@@ -74,12 +80,12 @@ else if(population<.978){r=Math.min(1.02,-Math.log(rand()*rand())*.18);const a=T
 else{halo=true;const a=TAU*rand(),q=rand()*2-1,s=Math.sqrt(1-q*q);r=.08+.97*Math.pow(rand(),.7);x=Math.cos(a)*s*r;z=Math.sin(a)*s*r;y=q*r*.32;}
 const radial=Math.hypot(x,z);if(radial>1.04){x*=1.04/radial;z*=1.04/radial;}
 positions.set([x*radius,y*radius,z*radius],i*3);
-const brightness=.46+Math.pow(rand(),5)*.78,rare=rand()<.004;
+const brightness=.46+Math.pow(rand(),5)*.78,rare=rand()<.007;
 let color=bulge?[1.04,.84,.60]:nebula?[.72,.29,.36]:young?[.72,.83,1.01]:[.88,.79,.66];
 if(halo)color=[.60,.57,.54];if(!bulge&&!young&&!nebula&&rand()<.08)color=[.89,.59,.43];
 dust[i]=dustAt(x,z);const b=brightness*(rare?1.85:1);colors.set(color.map(v=>v*b),i*3);
 sizes[i]=(.27+Math.pow(rand(),9)*1.03+(rare?.50:0))*Math.pow(radius/29,.72);
-phases[i]=rare?6.12+rand()*.15:rand()*6.10;opacities[i]=(bulge?.25:halo?.09:young?.42:nebula?.26:.22)*(rare?1.35:1);
+phases[i]=rare?6.12+rand()*TAU:rand()*6.10;opacities[i]=(bulge?.25:halo?.09:young?.42:nebula?.26:.22)*(rare?1.35:1);
 }
 const geometry=new THREE.BufferGeometry();
 for(const [name,array,itemSize]of [['position',positions,3],['aColor',colors,3],['aSize',sizes,1],['aPhase',phases,1],['aOpacity',opacities,1],['aDust',dust,1]])geometry.setAttribute(name,new THREE.BufferAttribute(array,itemSize));
@@ -99,22 +105,25 @@ const HAZE_FRAGMENT=`
 varying vec2 vUv;varying vec3 vWorld;varying vec3 vPlaneNormal;uniform float uLayer;uniform float uDustLayer;
 ${COMMON}
 void main(){
-vec2 q=(vUv-.5)*2.16;float r=length(q);if(r>1.08)discard;
+vec2 q=(vUv-.5)*2.16;q.y=-q.y;float r=length(q);if(r>1.08)discard;
 q=rotate2(q,-drift(r));float a=atan(q.y,q.x);
-vec2 warp=vec2(fbm(q*6.7+2.),fbm(q*6.7-4.));vec2 p=q+(warp-.5)*.055;
-float n=fbm(p*12.8+uLayer*2.31),fine=fbm(p*35.7-uLayer*.73),arms=0.,dust=0.;
+// Evolve the fine nebula inside its co-orbiting arm envelope, not the arm shape.
+vec2 evolution=vec2(sin(uTime*.19+uLayer)*.30,cos(uTime*.14+uLayer*.7)*.24);
+vec2 warp=vec2(fbm(q*6.7+2.+evolution*.35),fbm(q*6.7-4.-evolution*.25));vec2 p=q+(warp-.5)*.055;
+float n=fbm(p*12.8+uLayer*2.31+evolution),fine=fbm(p*35.7-uLayer*.73-evolution*.70),arms=0.,dust=0.;
 for(int i=0;i<2;i++){float arm=float(i),delta=angularDistance(a,spiral(r,arm));arms=max(arms,exp(-pow(delta/(.055+.15*r),2.)));
 float lane=angularDistance(a,spiral(r,arm)+.20+(fbm(p*7.4+vec2(3.,-4.))-.5)*.38);dust=max(dust,exp(-pow(lane/(.025+.045*r),2.)));}
 float edge=1.-smoothstep(.80,1.07,r),inner=smoothstep(.035,.15,r),clump=smoothstep(.29,.74,n)*(.4+.6*fine);
 float disc=exp(-r*2.9)*(.45+.55*n),armCloud=arms*clump*inner*edge,bulge=exp(-r*r/0.014)*(.8+.2*fine);
+float localPulse=sin(uTime*.55+fbm(p*5.3+uLayer)*10.+uLayer*1.7);
 vec3 viewDir=normalize(cameraPosition-vWorld);float facing=abs(dot(vPlaneNormal,viewDir));
 float edgeFade=.25+.75*smoothstep(.015,.13,facing),reveal=smoothstep(0.,.20,uReveal),alpha;vec3 color;
 if(uDustLayer>.5){float filament=smoothstep(.39,.75,fbm(p*23.1+vec2(5.,2.)));
 float extinction=dust*(.48+.52*filament)*smoothstep(.08,.2,r)*edge;alpha=extinction*.22*uDim*reveal*edgeFade;color=vec3(.018,.012,.016);}
-else{float redPatch=smoothstep(.66,.81,fbm(p*18.5+vec2(13.,7.)))*armCloud;
+else{float redPatch=smoothstep(.66,.81,fbm(p*18.5+vec2(13.,7.)+evolution*.6))*armCloud;
 vec3 oldStars=vec3(.58,.43,.27),youngStars=vec3(.29,.37,.47),wine=vec3(.34,.10,.15);
-color=mix(oldStars,youngStars,clamp(arms*inner*.70,0.,1.));color=mix(color,wine,redPatch*.78);color=mix(color,vec3(.76,.60,.38),bulge*.62);
-alpha=(disc*.070+armCloud*.11+bulge*.10)*edge*uDim*reveal*edgeFade;alpha*=1.-dust*.58*inner;}
+color=mix(oldStars,youngStars,clamp(arms*inner*(.70+localPulse*.035),0.,1.));color=mix(color,wine,redPatch*.78);color=mix(color,vec3(.76,.60,.38),bulge*.62);
+alpha=(disc*.070+armCloud*.11*(1.+localPulse*.14)+bulge*.10)*edge*uDim*reveal*edgeFade;alpha*=1.-dust*.58*inner;}
 if(alpha<.0008)discard;gl_FragColor=vec4(color,alpha);
 #include <tonemapping_fragment>
 #include <colorspace_fragment>
